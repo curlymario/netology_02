@@ -1,7 +1,7 @@
-@charset "UTF-8";
 /*------------------------------------*/
 /*  #GLOBAL                           */
 /*------------------------------------*/
+
 html,
 body {
   padding: 0;
@@ -18,17 +18,19 @@ body {
   display: block;
   width: 100%;
   padding: 70px 0;
+
   font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
   color: #333333;
-}
 
-.site-section--background {
-  /* тёмный фон */
-  color: #ffffff;
+  &--background {
+    /* тёмный фон */
+    color: #ffffff;
+  }
 }
 
 /* базовые стили заголовков, на случай если забуду
 или на случай если я пропущу класс */
+
 h1 {
   font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
@@ -45,6 +47,7 @@ h3 {
   text-transform: uppercase;
 }
 
+
 .wrapper {
   /* оборачивает контент в единую колонку */
   display: block;
@@ -53,7 +56,11 @@ h3 {
   padding: 0 10px;
 }
 
+
+
+
+
 /*------------------------------------*/
 /*  #HEADER                           */
 /*------------------------------------*/
-/*# sourceMappingURL=style.css.map */
+
