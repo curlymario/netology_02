@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="description" content="Дипломная (курсовая) работа по курсу «HTML-вёрстка: с нуля до первого макета»"> 
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,900&amp;subset=cyrillic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,900|Hammersmith+One">
     <link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,31 +18,33 @@
 
   <body>
 
-    <header class="main-header  site-section  site-section--background">
+    <header class="main-header  site-section  --background">
 
-      <nav class="main-navigation  wrapper">
+      <nav class="main-navbar  wrapper">
 
-        <img class="logo" src alt="tajam logo">
+        <img class="main-navbar__logo" src="https://i.lensdump.com/i/8oegSK.png" width="128px" height="50px" alt="tajam logo">
 
-        <ul class="navigation">
-          <li class="navigation__item navigation__item--current">Home</li>
-          <li class="navigation__item"><a href="#">About</a></li>
-          <li class="navigation__item"><a href="#">Expertise</a></li>
-          <li class="navigation__item"><a href="#">Teams</a></li>
-          <li class="navigation__item"><a href="#">Works</a></li>
-          <li class="navigation__item"><a href="#">People say</a></li>
-          <li class="navigation__item"><a href="#">Contact</a></li>
+        <ul class="main-navigation">
+          <li class="main-navigation__item --current">Home</li>
+          <li class="main-navigation__item"><a href="#">About</a></li>
+          <li class="main-navigation__item"><a href="#">Expertise</a></li>
+          <li class="main-navigation__item"><a href="#">Teams</a></li>
+          <li class="main-navigation__item"><a href="#">Works</a></li>
+          <li class="main-navigation__item"><a href="#">People say</a></li>
+          <li class="main-navigation__item"><a href="#">Contact</a></li>
         </ul>
 
       </nav><!--Primary navigation-->
 
 
-      <section class="slider">
-        <h1 class="slider__title">We Are Awesome Creative Agency</h1>
-        <p class="slider__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
-        <a class="slider__btn  btn">Learn More</a>
+      <section class="slider  wrapper">
+        <div class="slide">
+          <h1 class="slide__title">We Are Awesome Creative Agency</h1>
+          <p class="slide__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+          <a class="slide__btn  btn">Learn More</a>
+        </div>
         <ul class="slider__controls">
-          <li class="slider__ctrl-btn  slider__ctrl-btn--current"></li>
+          <li class="slider__ctrl-btn  --current"></li>
           <li class="slider__ctrl-btn"><a href="#"></a></li>
           <li class="slider__ctrl-btn"><a href="#"></a></li>
           <li class="slider__ctrl-btn"><a href="#"></a></li>
@@ -53,42 +55,42 @@
 
 
 
-    <section class="expertise-block  section-block">
+    <section class="expertise-block  site-section">
 
-      <header class="section-header">
-        <h2 class="section-header__title">Expertise</h2>
-        <p class="section-header__subtitle">Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
+      <header class="expertise-header">
+        <h2 class="expertise-header__title">Expertise</h2>
+        <p class="expertise-header__subtitle">Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
       </header>
 
       <ul class="expertise-list  wrapper">
 
         <li class="expertise">
-          <h3 class="expertise__title  icon-web">Web design & development</h3>
+          <h3 class="expertise__title  --icon-web">Web design & development</h3>
           <p class="expertise__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
         </li>
 
         <li class="expertise">
-          <h3 class="expertise__title  icon-brand">Branding identity</h3>
+          <h3 class="expertise__title  --icon-brand">Branding identity</h3>
           <p class="expertise__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
         </li>
 
         <li class="expertise">
-          <h3 class="expertise__title  icon-app">Mobile app</h3>
+          <h3 class="expertise__title  --icon-app">Mobile app</h3>
           <p class="expertise__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
         </li>
 
         <li class="expertise">
-          <h3 class="expertise__title  icon-seo">Search engine optimization</h3>
+          <h3 class="expertise__title  --icon-seo">Search engine optimization</h3>
           <p class="expertise__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
         </li>
 
         <li class="expertise">
-          <h3 class="expertise__title  icon-game">Game development</h3>
+          <h3 class="expertise__title  --icon-game">Game development</h3>
           <p class="expertise__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
         </li>
 
         <li class="expertise">
-          <h3 class="expertise__title  icon-love">Made with love</h3>
+          <h3 class="expertise__title  --icon-love">Made with love</h3>
           <p class="expertise__descript">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet Aenean.</p>
         </li>
 
@@ -98,11 +100,11 @@
 
 
 
-    <section class="team-block  section-block  section-block--background">
+    <section class="team-block  site-section  --background">
 
-      <header class="section-header">
-        <h2 class="section-header__title">Meet our amazing team</h2>
-        <p class="section-header__subtitle">Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
+      <header class="team-header">
+        <h2 class="team-header__title">Meet our amazing team</h2>
+        <p class="team-header__subtitle">Lorem ipsum dolor sit amet proin gravida nibh vel velit</p>
       </header>
 
       <ul class="team  wrapper">
@@ -141,7 +143,7 @@
 
 
 
-    <section class="portfolio-block  section-block">
+    <section class="portfolio-block  site-section">
 
       <header class="portfolio-block__header  wrapper"> 
         <h2 class="portfolio-block__title">Our works</h2>
@@ -200,25 +202,25 @@
 
       </ul><!--Portfolio-->
 
-      <a class="button" href="#">lLoad more</a>
+      <a class="button" href="#">Load more</a>
 
     </section><!--Portfolio-block-->
 
 
 
-    <footer class="footer  section-block  section-block--background">
+    <footer class="footer  site-section  --background">
       <div class="wrapper">
 
         <section class="footer-about">
-          <img class="logo" src alt="tajam logo">
+          <img class="footer__logo" src="https://i.lensdump.com/i/8oegSK.png" width="128px" height="50px" alt="tajam logo">
           <p class="footer__descript">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit</p>
         </section>
 
         <address class="footer-contacts">
           <h3 class="footer__title">Our Studio</h3>
-          <p class="footer__contacts  icon-location">Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat<br>
+          <p class="footer__contacts  --icon-location">Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat<br>
               11480 - Indonesia</p>
-          <p class="footer__contacts  icon-phone">(+62) 21-2224 3333</p>
+          <p class="footer__contacts  --icon-phone">(+62) 21-2224 3333</p>
         </address>
 
 
@@ -232,21 +234,21 @@
           </form>
 
           <ul class="social-links">
-            <li class="social__btn  social__btn--fb"><a href="#">Facebook</a></li>
-            <li class="social__btn  social__btn--tw"><a href="#">Twitter</a></li>
-            <li class="social__btn  social__btn--dr"><a href="#">Dribble</a></li>
-            <li class="social__btn  social__btn--ig"><a href="#">Instagram</a></li>
-            <li class="social__btn  social__btn--gp"><a href="#">Google+</a></li>
-            <li class="social__btn  social__btn--yt"><a href="#">YouTube</a></li>
+            <li class="social__btn  --fb"><a href="#">Facebook</a></li>
+            <li class="social__btn  --tw"><a href="#">Twitter</a></li>
+            <li class="social__btn  --dr"><a href="#">Dribble</a></li>
+            <li class="social__btn  --ig"><a href="#">Instagram</a></li>
+            <li class="social__btn  --gp"><a href="#">Google+</a></li>
+            <li class="social__btn  --yt"><a href="#">YouTube</a></li>
           </ul>
           
         </section><!--footer-subscribe-->
 
 
-        <ul class="navigation">
-          <li class="navigation__item"><a href="#">Help</a></li>
-          <li class="navigation__item"><a href="#">Terms & Condition</a></li>
-          <li class="navigation__item"><a href="#">Privacy</a></li>
+        <ul class="footer-navigation">
+          <li class="footer-navigation__item"><a href="#">Help</a></li>
+          <li class="footer-navigation__item"><a href="#">Terms & Condition</a></li>
+          <li class="footer-navigation__item"><a href="#">Privacy</a></li>
         </ul>
 
         <address class="copyright">

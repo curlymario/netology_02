@@ -5,6 +5,7 @@
 html,
 body {
   padding: 0;
+  margin: 0;
   font-size: 100%;
 }
 
@@ -22,27 +23,9 @@ body {
   color: #333333;
 }
 
-.site-section--background {
+.site-section.--background {
   /* тёмный фон */
   color: #ffffff;
-}
-
-/* базовые стили заголовков, на случай если забуду
-или на случай если я пропущу класс */
-h1 {
-  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-h2 {
-  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-h3 {
-  /*в макете у заголовков экспертизы и футера разный font-size,
-  но в целом это один и тот же уровень (h3) и стиль*/
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
 }
 
 .wrapper {
@@ -53,7 +36,278 @@ h3 {
   padding: 0 10px;
 }
 
+.btn {
+  display: inline-block;
+  padding: 14px;
+  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #00e0d0;
+  text-decoration: none;
+  border: 1px solid #00e0d0;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  color: #332855;
+  background-color: #00e0d0;
+  border-color: #332855;
+}
+
 /*------------------------------------*/
 /*  #HEADER                           */
 /*------------------------------------*/
+.main-header {
+  background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: 15px;
+}
+
+.main-navbar {
+  display: block;
+  text-align: right;
+  margin-bottom: 25px;
+}
+
+.main-navbar__logo {
+  display: block;
+  width: 128px;
+  height: 50px;
+  float: left;
+}
+
+.main-navigation {
+  display: inline-block;
+  font-size: 0px;
+  list-style: none;
+  text-align: left;
+  vertical-align: top;
+}
+
+.main-navigation__item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.main-navigation__item.--current {
+  display: inline-block;
+  padding: 17px 10px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #00e0d0;
+}
+
+.main-navigation__item a {
+  display: inline-block;
+  padding: 17px 10px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.main-navigation__item a:hover {
+  color: #00e0d0;
+  text-decoration: underline;
+}
+
+.slider {
+  display: block;
+  text-align: center;
+}
+
+.slider__controls {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  list-style-type: none;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.slider__ctrl-btn {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.slider__ctrl-btn:last-child {
+  margin-right: 0;
+}
+
+.slider__ctrl-btn a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  padding: 0px;
+  border: 1px solid #ffffff;
+}
+
+.slider__ctrl-btn a:hover {
+  background-color: #00e0d0;
+  border-width: 0;
+}
+
+.slider__ctrl-btn.--current {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  padding: 0px;
+  background-color: #00e0d0;
+}
+
+.slide {
+  display: inline-block;
+  max-width: 800px;
+  margin: 0 auto 35px;
+  padding: 125px 10px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.slide__title {
+  display: block;
+  margin-bottom: 25px;
+  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+}
+
+.slide__title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  margin: 20px auto 0;
+  border-bottom: 1px solid #00e0d0;
+}
+
+.slide__descript {
+  font: normal 300 14px/24px Roboto, Verdana, Arial, Helvetica, sans-serif;
+  margin-bottom: 45px;
+}
+
+.slide__btn {
+  margin: 0 auto;
+}
+
+/*------------------------------------*/
+/*  #EXPERTISE                        */
+/*------------------------------------*/
+.expertise {
+  display: inline-block;
+  width: 33.33%;
+  margin: 0;
+  padding: 32px;
+  vertical-align: top;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.expertise-header {
+  display: block;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.expertise-header__title {
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  color: #413d4b;
+}
+
+.expertise-header__subtitle {
+  font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  color: #2f2d35;
+  opacity: 0.75;
+}
+
+.expertise-header::after {
+  content: "";
+  display: block;
+  width: 50px;
+  margin: 20px auto 0;
+  border-bottom: 1px solid #413d4b;
+  opacity: 0.3;
+}
+
+.expertise-list {
+  list-style-type: none;
+  font-size: 0;
+}
+
+.expertise:nth-child(3n) {
+  border-right: none;
+}
+
+.expertise:nth-child(n+4) {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.expertise__title {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 85px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.expertise__title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.expertise__title.--icon-web::before {
+  width: 49px;
+  height: 50px;
+  background: url("https://i.lensdump.com/i/8oerxZ.png") -119px -10px;
+}
+
+.expertise__title.--icon-brand::before {
+  width: 50px;
+  height: 46px;
+  background: url("https://i.lensdump.com/i/8oerxZ.png") -188px -6px;
+}
+
+.expertise__title.--icon-app::before {
+  width: 28px;
+  height: 50px;
+  background: url("https://i.lensdump.com/i/8oerxZ.png") -10px -10px;
+}
+
+.expertise__title.--icon-seo::before {
+  width: 50px;
+  height: 50px;
+  background: url("https://i.lensdump.com/i/8oerxZ.png") -258px -10px;
+}
+
+.expertise__title.--icon-game::before {
+  width: 41px;
+  height: 50px;
+  background: url("https://i.lensdump.com/i/8oerxZ.png") -58px -10px;
+}
+
+.expertise__title.--icon-love::before {
+  width: 50px;
+  height: 46px;
+  background: url("https://i.lensdump.com/i/8oerxZ.png") -328px -10px;
+}
+
+.expertise__descript {
+  font: normal 300 14px/22px Roboto, Verdana, Arial, Helvetica, sans-serif;
+}
 /*# sourceMappingURL=style.css.map */

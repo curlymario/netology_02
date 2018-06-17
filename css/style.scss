@@ -1,3 +1,46 @@
+//------------------------------------
+//  #TYPOGRAPHY                           
+//------------------------------------
+
+@mixin p-font($font-size, $line-height) {
+  font: normal 300 #{$font-size}/#{$line-height} Roboto, Verdana, Arial, Helvetica, sans-serif;
+}
+
+@mixin h1-font {
+  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin h2-font {
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+}
+
+@mixin h3-font($fontsize, $lineheight) {
+  // в макете у заголовков экспертизы и футера разный font-size,
+  // но в целом это один и тот же уровень (h3) и стиль
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  text-transform: uppercase;
+}
+
+@mixin subheader {
+  font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin header-line($color) {
+  content: "";
+  display: block;
+  width: 50px;
+  margin: 20px auto 0;
+  border-bottom: 1px solid $color;
+}
+
+
+
+
+
 /*------------------------------------*/
 /*  #GLOBAL                           */
 /*------------------------------------*/
@@ -5,6 +48,7 @@
 html,
 body {
   padding: 0;
+  margin: 0;
   font-size: 100%;
 }
 
@@ -12,41 +56,24 @@ body {
   box-sizing: border-box;
 }
 
+// добавить в html разметочных div'ов?
+// стилизовать через разметочные классы
+
 .site-section {
   /* «уши» блоков вертикальной сетки, 
   вертикальные поля и базовый текст*/
   display: block;
   width: 100%;
   padding: 70px 0;
-
-  font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
+  @include p-font(14px, 26px);
   color: #333333;
 
-  &--background {
+  &.--background {
     /* тёмный фон */
     color: #ffffff;
   }
+  
 }
-
-/* базовые стили заголовков, на случай если забуду
-или на случай если я пропущу класс */
-
-h1 {
-  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-h2 {
-  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-h3 {
-  /*в макете у заголовков экспертизы и футера разный font-size,
-  но в целом это один и тот же уровень (h3) и стиль*/
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
 
 .wrapper {
   /* оборачивает контент в единую колонку */
@@ -54,6 +81,57 @@ h3 {
   max-width: 960px;
   margin: auto;
   padding: 0 10px;
+}
+
+@mixin logo {
+  display: block;
+  width: 128px;
+  height: 50px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px;
+
+  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #00e0d0;
+  text-decoration: none;
+
+  border: 1px solid #00e0d0;
+  border-radius: 2px;
+
+  &:hover {
+    color: #332855;
+    background-color: #00e0d0;
+    border-color: #332855;
+  }
+}
+
+
+
+
+
+//------------------------------------
+//  #NAVIGATION                       
+//------------------------------------
+
+@mixin navigation {
+  display: inline-block;
+  font-size: 0px;
+  list-style: none;
+  text-align: left;
+  vertical-align: top;
+}
+
+@mixin navigation__item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin nav-box {
+  display: inline-block;
+  padding: 17px 10px;
 }
 
 
@@ -64,3 +142,233 @@ h3 {
 /*  #HEADER                           */
 /*------------------------------------*/
 
+.main-header {
+  background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: 15px;
+}
+
+.main {
+  &-navbar {
+    display: block;
+    text-align: right;
+    margin-bottom: 25px;
+
+    &__logo {
+      @include logo;
+      float: left;
+    }
+  }
+
+  &-navigation {
+    @include navigation;
+    
+  
+    &__item {
+      @include navigation__item;
+  
+      &.--current {
+        @include nav-box;
+        @include h3-font(13px, 16px);
+        color: #00e0d0;
+      }
+  
+      & a {
+        @include nav-box;
+        @include h3-font(13px, 16px);
+        color: #ffffff;
+        text-decoration: none;
+  
+        &:hover {
+          color: #00e0d0;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.slider {
+  display: block;
+  text-align: center;
+
+  &__controls {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    list-style-type: none;
+    text-align: center;
+    vertical-align: bottom;
+  }
+
+  @mixin ctrl-btn {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    padding: 0px;
+  }
+
+  &__ctrl-btn {
+    display: inline-block;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0; 
+    }
+    
+    & a{
+      @include ctrl-btn;
+      border: 1px solid #ffffff;
+
+      &:hover {
+        background-color: #00e0d0;
+        border-width: 0;
+      }
+    }
+
+    &.--current {
+      @include ctrl-btn;
+      background-color: #00e0d0;
+    }
+  }
+}
+
+.slide {
+  display: inline-block;
+  max-width: 800px;
+  margin: 0 auto 35px;
+  padding: 125px 10px;
+
+  vertical-align: middle;
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-bottom: 25px;
+    @include h1-font;
+
+    &::after {
+      @include header-line(#00e0d0);
+    }
+  }
+
+  &__descript {
+    @include p-font(14px, 24px);
+    margin-bottom: 45px;
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+}
+
+
+
+
+
+/*------------------------------------*/
+/*  #EXPERTISE                        */
+/*------------------------------------*/
+
+.expertise{
+
+  &-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+
+    &__title {
+      @include h2-font;
+      color: #413d4b;
+    }
+
+    &__subtitle {
+      @include subheader;
+      color: #2f2d35;
+      opacity: 0.75;
+    }
+
+    &::after {
+      @include header-line(#413d4b);
+      opacity: 0.3;
+    }
+  }
+
+  &-list {
+    list-style-type: none;
+    font-size: 0;
+  }
+
+  display: inline-block;
+  width: 33.33%;
+  margin: 0;
+  padding: 32px;
+  vertical-align: top;
+  text-align: center;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:nth-child(3n) {
+    border-right: none;
+  }
+
+  &:nth-child(n+4) {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  &__title {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 85px;
+    @include h3-font(14px, 1.2);
+  
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.--icon-web::before {
+      width: 49px; height: 50px;
+      background: url('https://i.lensdump.com/i/8oerxZ.png') -119px -10px;
+    }
+
+    &.--icon-brand::before {
+      width: 50px; height: 46px;
+      background: url('https://i.lensdump.com/i/8oerxZ.png') -188px -6px;
+    }
+
+    &.--icon-app::before {
+      width: 28px; height: 50px;
+      background: url('https://i.lensdump.com/i/8oerxZ.png') -10px -10px;
+    }
+
+    &.--icon-seo::before {
+      width: 50px; height: 50px;
+      background: url('https://i.lensdump.com/i/8oerxZ.png') -258px -10px;
+    }
+
+    &.--icon-game::before {
+      width: 41px; height: 50px;
+      background: url('https://i.lensdump.com/i/8oerxZ.png') -58px -10px;
+    }
+
+    &.--icon-love::before {
+      width: 50px; height: 46px;
+      background: url('https://i.lensdump.com/i/8oerxZ.png') -328px -10px;
+    } 
+  }
+
+  &__descript {
+    @include p-font(14px, 22px);
+  }
+}
