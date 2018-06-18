@@ -19,7 +19,6 @@ body {
   display: block;
   width: 100%;
   padding: 70px 0;
-  font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
   color: #333333;
 }
 
@@ -184,8 +183,8 @@ body {
   content: "";
   display: block;
   width: 50px;
-  margin: 20px auto 0;
   border-bottom: 1px solid #00e0d0;
+  margin: 20px auto 0;
 }
 
 .slide__descript {
@@ -217,12 +216,14 @@ body {
 }
 
 .expertise-header__title {
+  margin: 0 auto 10px;
   font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
   text-transform: uppercase;
   color: #413d4b;
 }
 
 .expertise-header__subtitle {
+  margin: 0 auto 18px;
   font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
   color: #2f2d35;
   opacity: 0.75;
@@ -232,8 +233,8 @@ body {
   content: "";
   display: block;
   width: 50px;
-  margin: 20px auto 0;
-  border-bottom: 1px solid #413d4b;
+  border-bottom: 2px solid #413d4b;
+  margin: 0 auto;
   opacity: 0.3;
 }
 
@@ -309,5 +310,235 @@ body {
 
 .expertise__descript {
   font: normal 300 14px/22px Roboto, Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*------------------------------------*/
+/*  #TEAM                             */
+/*------------------------------------*/
+.team {
+  list-style-type: none;
+  font-size: 0;
+  text-align: center;
+}
+
+.team-block {
+  background: #332855 url("https://i.lensdump.com/i/8oe4Ir.jpg") no-repeat center;
+  background-size: cover;
+  text-align: center;
+}
+
+.team-header {
+  display: block;
+  text-align: center;
+  margin-bottom: 47px;
+}
+
+.team-header__title {
+  margin: 0 auto 10px;
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+}
+
+.team-header__subtitle {
+  margin: 0 auto 18px;
+  font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+}
+
+.team-header::after {
+  content: "";
+  display: block;
+  width: 50px;
+  border-bottom: 2px solid #ffffff;
+  margin: 0 auto;
+}
+
+.team-member {
+  display: inline-block;
+  width: 220px;
+  margin-right: 20px;
+  margin-bottom: 70px;
+  vertical-align: top;
+}
+
+.team-member:last-child {
+  margin-right: 0px;
+}
+
+.team-member img {
+  display: block;
+  width: 220px;
+  height: 230px;
+  background: white;
+}
+
+.team-member__bio {
+  display: block;
+  width: 100%;
+  padding: 20px 0 22px;
+  border: 1px solid #e7e7e7;
+  border: 1px solid rgba(231, 231, 231, 0.5);
+}
+
+.team-member__name {
+  display: block;
+  margin: 0 auto 9px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.team-member__role {
+  display: block;
+  margin: 0 auto;
+  font: normal 300 13px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.team__descript {
+  font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+  margin-bottom: 27px;
+}
+
+.team__btn {
+  min-width: 140px;
+  margin: 0 auto;
+}
+
+/*------------------------------------*/
+/*  #PORTFOLIO                        */
+/*------------------------------------*/
+.portfolio {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  text-align: justify;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.portfolio-block {
+  text-align: center;
+}
+
+.portfolio-block__header {
+  /*верхний отступ от section, а нижний установлен здесь */
+  margin-bottom: 70px;
+  text-align: justify;
+}
+
+.portfolio-block__header::after {
+  /* clearfix */
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.portfolio-block__title {
+  float: left;
+  margin: 0 auto;
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.portfolio-block__link {
+  float: right;
+  position: relative;
+  margin: 0 auto;
+  padding-right: 18px;
+  font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.portfolio-block__link:hover {
+  text-decoration: underline;
+}
+
+.portfolio-block__link::after {
+  /* стрелочка */
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.portfolio__item {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 16.66%;
+  overflow: hidden;
+}
+
+.portfolio__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.portfolio__link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #00e0d0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.portfolio__link:hover::before {
+  opacity: 0.7;
+}
+
+.portfolio__thumb {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.portfolio__btn {
+  min-width: 140px;
+  margin: 70px auto 0;
+}
+
+/*------------------------------------*/
+/*  #FOOTER                           */
+/*------------------------------------*/
+.footer {
+  background: #332855 url("https://i.lensdump.com/i/8oempb.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.footer::after {
+  /* clearfix */
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.footer-about {
+  display: block;
+  float: left;
+}
+
+.footer-contacts {
+  display: block;
+  float: left;
+}
+
+.footer-subscribe {
+  display: block;
+  float: right;
 }
 /*# sourceMappingURL=style.css.map */

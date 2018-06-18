@@ -29,12 +29,11 @@
   font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
 
-@mixin header-line($color) {
+@mixin header-line($height, $color) {
   content: "";
   display: block;
   width: 50px;
-  margin: 20px auto 0;
-  border-bottom: 1px solid $color;
+  border-bottom: $height solid $color;
 }
 
 
@@ -65,7 +64,7 @@ body {
   display: block;
   width: 100%;
   padding: 70px 0;
-  @include p-font(14px, 26px);
+
   color: #333333;
 
   &.--background {
@@ -252,7 +251,8 @@ body {
     @include h1-font;
 
     &::after {
-      @include header-line(#00e0d0);
+      @include header-line(1px, #00e0d0);
+      margin: 20px auto 0;
     }
   }
 
@@ -275,7 +275,7 @@ body {
 /*  #EXPERTISE                        */
 /*------------------------------------*/
 
-.expertise{
+.expertise {
 
   &-header {
     display: block;
@@ -283,18 +283,23 @@ body {
     margin-bottom: 50px;
 
     &__title {
+      margin: 0 auto 10px;
+
       @include h2-font;
       color: #413d4b;
     }
 
     &__subtitle {
+      margin: 0 auto 18px;
+
       @include subheader;
       color: #2f2d35;
       opacity: 0.75;
     }
 
     &::after {
-      @include header-line(#413d4b);
+      @include header-line(2px, #413d4b);
+      margin: 0 auto;
       opacity: 0.3;
     }
   }
@@ -337,38 +342,266 @@ body {
       transform: translateX(-50%);
     }
 
-    &.--icon-web::before {
-      width: 49px; height: 50px;
-      background: url('https://i.lensdump.com/i/8oerxZ.png') -119px -10px;
-    }
+    &.--icon-web::before    { width: 49px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -119px -10px; }
 
-    &.--icon-brand::before {
-      width: 50px; height: 46px;
-      background: url('https://i.lensdump.com/i/8oerxZ.png') -188px -6px;
-    }
+    &.--icon-brand::before  { width: 50px; height: 46px; background: url('https://i.lensdump.com/i/8oerxZ.png') -188px -6px; }
 
-    &.--icon-app::before {
-      width: 28px; height: 50px;
-      background: url('https://i.lensdump.com/i/8oerxZ.png') -10px -10px;
-    }
+    &.--icon-app::before    { width: 28px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -10px -10px; }
 
-    &.--icon-seo::before {
-      width: 50px; height: 50px;
-      background: url('https://i.lensdump.com/i/8oerxZ.png') -258px -10px;
-    }
+    &.--icon-seo::before    { width: 50px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -258px -10px; }
 
-    &.--icon-game::before {
-      width: 41px; height: 50px;
-      background: url('https://i.lensdump.com/i/8oerxZ.png') -58px -10px;
-    }
+    &.--icon-game::before   { width: 41px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -58px -10px; }
 
-    &.--icon-love::before {
-      width: 50px; height: 46px;
-      background: url('https://i.lensdump.com/i/8oerxZ.png') -328px -10px;
-    } 
+    &.--icon-love::before   { width: 50px; height: 46px; background: url('https://i.lensdump.com/i/8oerxZ.png') -328px -10px; } 
   }
 
   &__descript {
     @include p-font(14px, 22px);
+  }
+}
+
+
+
+
+
+/*------------------------------------*/
+/*  #TEAM                             */
+/*------------------------------------*/
+
+.team {
+  &-block {
+    background: #332855 url("https://i.lensdump.com/i/8oe4Ir.jpg") no-repeat center;
+    background-size: cover;
+    text-align: center;
+  }
+
+  &-header {
+    display: block;
+    text-align: center;
+    margin-bottom: 47px;
+
+    &__title {
+      margin: 0 auto 10px;
+
+      @include h2-font;
+    }
+
+    &__subtitle {
+      margin: 0 auto 18px;
+
+      @include subheader;
+    }
+
+    &::after {
+      @include header-line(2px, #ffffff);
+      margin: 0 auto;
+    }
+  }
+
+  list-style-type: none;
+  font-size: 0;
+  text-align: center;
+
+  &-member {
+    display: inline-block;
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 70px;
+    vertical-align: top;
+    
+    &:last-child {
+      margin-right: 0px;
+    }
+
+    & img {
+      display: block;
+      width: 220px;
+      height: 230px;
+      background: white;
+    }
+
+    &__bio {
+      display: block;
+      width: 100%;
+      padding: 20px 0 22px;
+      border: 1px solid #e7e7e7;
+      border: 1px solid rgba(231, 231, 231, 0.5);
+    }
+
+    &__name {
+      display: block;
+      margin: 0 auto 9px;
+      @include h3-font (14px, 1);
+    }
+
+    &__role {
+      display: block;
+      margin: 0 auto;
+      @include p-font(13px, 1);
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+  }
+
+  &__descript {
+    @include p-font(14px, 1);
+    margin-bottom: 27px;
+  }
+
+  &__btn {
+    min-width: 140px;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+/*------------------------------------*/
+/*  #PORTFOLIO                        */
+/*------------------------------------*/
+
+.portfolio {
+
+  &-block {
+
+    text-align: center;
+
+    &__header {
+      /*верхний отступ от section, а нижний установлен здесь */
+      margin-bottom: 70px;
+      text-align: justify;
+
+      &::after {
+        /* clearfix */
+        display: table;
+        content: "";
+        clear: both;
+      }
+    }
+
+    &__title {
+      float: left;
+      margin: 0 auto;
+      @include h2-font;
+      vertical-align: middle;
+    }
+
+    &__link {
+      float: right;
+      position: relative;
+      margin: 0 auto;
+      padding-right: 18px;
+
+      @include p-font(14px, 1);
+      vertical-align: middle;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        /* стрелочка */
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  text-align: justify;
+  list-style-type: none;
+  overflow: hidden;
+
+  &__item {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 16.66%;
+    overflow: hidden;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    
+    width: 100%;
+    height: 100%;
+
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #00e0d0;
+      opacity: 0;
+      z-index: 2;
+    }
+
+    &:hover::before {
+      opacity: 0.7;
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  &__btn {
+    min-width: 140px;
+    margin: 70px auto 0;
+  }
+}
+
+
+
+
+
+/*------------------------------------*/
+/*  #FOOTER                           */
+/*------------------------------------*/
+
+.footer {
+  background: #332855 url("https://i.lensdump.com/i/8oempb.jpg") no-repeat center;
+  background-size: cover;
+
+  &::after {
+    /* clearfix */
+    display: table;
+    content: "";
+    clear: both;
+  }
+
+  &-about {
+    display: block;
+    float: left;
+  }
+
+
+
+  &-contacts {
+    display: block;
+    float: left;
+  }
+
+
+  &-subscribe {
+    display: block;
+    float: right;
   }
 }
