@@ -9,7 +9,7 @@
     <meta name="description" content="Дипломная (курсовая) работа по курсу «HTML-вёрстка: с нуля до первого макета»"> 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,900|Hammersmith+One">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://netology-code.github.io/html-homeworks/css/resourses/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
   </head>
@@ -153,7 +153,7 @@
 
     <section class="portfolio-block  site-section">
 
-      <header class="portfolio-block__header  wrapper"> 
+      <header class="portfolio-block__header  wrapper  clearfix"> 
         <h2 class="portfolio-block__title">Our works</h2>
         <a class="portfolio-block__link">See All Project in dribble</a>
       </header>
@@ -243,49 +243,59 @@
     <footer class="footer  site-section  --background">
       <div class="wrapper">
 
-        <section class="footer-about">
-          <img class="footer-about__logo" src="https://i.lensdump.com/i/8oegSK.png" width="128px" height="50px" alt="tajam logo">
-          <p class="footer-about__descript">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit</p>
-        </section>
+        <section class="footer-information  clearfix">
 
-        <address class="footer-contacts">
-          <h3 class="footer-contacts__title">Our Studio</h3>
-          <p class="footer-contacts__descript  --icon-location">Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat<br>
-              11480 - Indonesia</p>
-          <p class="footer-contacts__descript  --icon-phone">(+62) 21-2224 3333</p>
-        </address>
+          <section class="footer-about">
+            <img class="footer-about__logo" src="https://i.lensdump.com/i/8oegSK.png" width="128px" height="50px" alt="tajam logo">
+            <p class="footer-about__descript">lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh elit. Duis sed odio sit amet auctror a ornare odio non mauris vitae erat in elit</p>
+          </section><!--footer-about-->
 
 
-        <section class="footer-subscribe">
+          <address class="footer-contacts">
+            <h3 class="footer-contacts__title">Our Studio</h3>
+            <p class="footer-contacts__descript  --icon-location">Ruko cucruk, Jl. Radio luar dalem jos No.12 - 13, Kalideres - Jakarta Barat<br>
+                11480 - Indonesia</p>
+            <p class="footer-contacts__descript  --icon-phone">(+62) 21-2224 3333</p>
+          </address><!--footer-contacts-->
 
-          <h3 class="footer-subscribe__title">Stay in touch</h3>
 
-          <form class="footer-form">
-            <input class="footer-form__input" type="email" placeholder="Subscribe to our newsletter">
-            <button class="footer-form__btn" type="submit"></button>
-          </form>
+          <section class="footer-subscribe">
 
-          <ul class="footer-social">
-            <li class="footer-social__btn  --fb"><a href="#">Facebook</a></li>
-            <li class="footer-social__btn  --tw"><a href="#">Twitter</a></li>
-            <li class="footer-social__btn  --dr"><a href="#">Dribble</a></li>
-            <li class="footer-social__btn  --ig"><a href="#">Instagram</a></li>
-            <li class="footer-social__btn  --gp"><a href="#">Google+</a></li>
-            <li class="footer-social__btn  --yt"><a href="#">YouTube</a></li>
+            <h3 class="footer-subscribe__title">Stay in touch</h3>
+
+            <form class="footer-form">
+              <input class="footer-form__input" type="email" placeholder="Subscribe to our newsletter">
+              <button class="footer-form__btn" type="submit">Subscribe</button>
+            </form>
+
+            <ul class="footer-social">
+              <li class="footer-social__btn  --fb"><a href="#">Facebook</a></li>
+              <li class="footer-social__btn  --tw"><a href="#">Twitter</a></li>
+              <li class="footer-social__btn  --dr"><a href="#">Dribble</a></li>
+              <li class="footer-social__btn  --ig"><a href="#">Instagram</a></li>
+              <li class="footer-social__btn  --gp"><a href="#">Google+</a></li>
+              <li class="footer-social__btn  --yt"><a href="#">YouTube</a></li>
+            </ul>
+            
+          </section><!--footer-subscribe-->
+
+        </section><!--footer-information-->
+
+
+        <div class="footer-navbar  clearfix">
+
+          <ul class="footer-navigation">
+            <li class="footer-navigation__item"><a href="#">Help</a></li>
+            <li class="footer-navigation__item"><a href="#">Terms & Condition</a></li>
+            <li class="footer-navigation__item"><a href="#">Privacy</a></li>
           </ul>
-          
-        </section><!--footer-subscribe-->
 
+          <address class="footer-copyright">
+            Copyright © 2015 - Tajem Creative
+          </address>
 
-        <ul class="footer-navigation">
-          <li class="footer-navigation__item"><a href="#">Help</a></li>
-          <li class="footer-navigation__item"><a href="#">Terms & Condition</a></li>
-          <li class="footer-navigation__item"><a href="#">Privacy</a></li>
-        </ul>
+        </div><!--footer-navbar-->
 
-        <address class="footer-copyright">
-          Copyright © 2015 - Tajem Creative
-        </address>
 
       </div><!--wrapper-->
     </footer>

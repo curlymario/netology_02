@@ -1,45 +1,3 @@
-//------------------------------------
-//  #TYPOGRAPHY                           
-//------------------------------------
-
-@mixin p-font($font-size, $line-height) {
-  font: normal 300 #{$font-size}/#{$line-height} Roboto, Verdana, Arial, Helvetica, sans-serif;
-}
-
-@mixin h1-font {
-  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-@mixin h2-font {
-  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-  text-transform: uppercase;
-}
-
-@mixin h3-font($fontsize, $lineheight) {
-  // в макете у заголовков экспертизы и футера разный font-size,
-  // но в целом это один и тот же уровень (h3) и стиль
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: $fontsize;
-  line-height: $lineheight;
-  text-transform: uppercase;
-}
-
-@mixin subheader {
-  font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-@mixin header-line($height, $color) {
-  content: "";
-  display: block;
-  width: 50px;
-  border-bottom: $height solid $color;
-}
-
-
-
-
-
 /*------------------------------------*/
 /*  #GLOBAL                           */
 /*------------------------------------*/
@@ -82,11 +40,13 @@ body {
   padding: 0 10px;
 }
 
-@mixin logo {
-  display: block;
-  width: 128px;
-  height: 50px;
+.clearfix::after {
+  display: table;
+  content: "";
+  clear: both;
 }
+
+
 
 .btn {
   display: inline-block;
@@ -109,6 +69,54 @@ body {
 
 
 
+@mixin logo {
+  width: 128px;
+  height: 50px;
+}
+
+
+
+
+
+//------------------------------------
+//  #TYPOGRAPHY                           
+//------------------------------------
+
+@mixin p-font($font-size, $line-height) {
+  font: normal 300 #{$font-size}/#{$line-height} Roboto, Verdana, Arial, Helvetica, sans-serif;
+}
+
+@mixin h1-font {
+  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin h2-font {
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+}
+
+@mixin h3-font($fontsize, $lineheight) {
+  // в макете у заголовков экспертизы и футера разный font-size,
+  // но в целом это один и тот же уровень (h3) и стиль
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  text-transform: uppercase;
+}
+
+@mixin subheader {
+  font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+}
+
+@mixin header-line($height, $color) {
+  content: "";
+  display: block;
+  width: 50px;
+  border-bottom: $height solid $color;
+}
+
+
 
 
 //------------------------------------
@@ -117,6 +125,7 @@ body {
 
 @mixin navigation {
   display: inline-block;
+  padding: 0;
   font-size: 0px;
   list-style: none;
   text-align: left;
@@ -130,7 +139,7 @@ body {
 
 @mixin nav-box {
   display: inline-block;
-  padding: 17px 10px;
+  padding: 0 10px;
 }
 
 
@@ -141,27 +150,30 @@ body {
 /*  #HEADER                           */
 /*------------------------------------*/
 
-.main-header {
-  background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
-  background-size: cover;
-  padding-top: 15px;
-}
-
 .main {
+
+  &-header {
+    background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+    background-size: cover;
+    padding-top: 15px;
+  }
+
+
   &-navbar {
     display: block;
     text-align: right;
     margin-bottom: 25px;
 
     &__logo {
-      @include logo;
       float: left;
+      display: block;
+      @include logo;
     }
   }
 
   &-navigation {
     @include navigation;
-    
+    margin: 17px 0;
   
     &__item {
       @include navigation__item;
@@ -170,6 +182,10 @@ body {
         @include nav-box;
         @include h3-font(13px, 16px);
         color: #00e0d0;
+
+        &:first-child { padding-left: 0px; }
+        &:last-child { padding-right: 0px; }
+
       }
   
       & a {
@@ -182,10 +198,15 @@ body {
           color: #00e0d0;
           text-decoration: underline;
         }
+
+        &:first-child a { padding-left: 0px; }
+        &:last-child a { padding-right: 0px; }
       }
     }
   }
 }
+
+
 
 .slider {
   display: block;
@@ -304,10 +325,13 @@ body {
     }
   }
 
+
+
   &-list {
     list-style-type: none;
     font-size: 0;
   }
+
 
   display: inline-block;
   width: 33.33%;
@@ -317,6 +341,7 @@ body {
   text-align: center;
 
   border-right: 1px solid rgba(0, 0, 0, 0.08);
+
 
   &:nth-child(3n) {
     border-right: none;
@@ -355,6 +380,7 @@ body {
     &.--icon-love::before   { width: 50px; height: 46px; background: url('https://i.lensdump.com/i/8oerxZ.png') -328px -10px; } 
   }
 
+
   &__descript {
     @include p-font(14px, 22px);
   }
@@ -374,6 +400,7 @@ body {
     background-size: cover;
     text-align: center;
   }
+
 
   &-header {
     display: block;
@@ -398,9 +425,11 @@ body {
     }
   }
 
+
   list-style-type: none;
   font-size: 0;
   text-align: center;
+
 
   &-member {
     display: inline-block;
@@ -443,6 +472,8 @@ body {
     }
   }
 
+
+
   &__descript {
     @include p-font(14px, 1);
     margin-bottom: 27px;
@@ -472,20 +503,12 @@ body {
       /*верхний отступ от section, а нижний установлен здесь */
       margin-bottom: 70px;
       text-align: justify;
-
-      &::after {
-        /* clearfix */
-        display: table;
-        content: "";
-        clear: both;
-      }
     }
 
     &__title {
       float: left;
       margin: 0 auto;
       @include h2-font;
-      vertical-align: middle;
     }
 
     &__link {
@@ -494,8 +517,7 @@ body {
       margin: 0 auto;
       padding-right: 18px;
 
-      @include p-font(14px, 1);
-      vertical-align: middle;
+      @include p-font(14px, 26px);
       text-decoration: none;
 
       &:hover {
@@ -505,13 +527,21 @@ body {
       &::after {
         /* стрелочка */
         position: absolute;
-        display: block;
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+
+        display: block;
+        width: 9px;
+        height: 13px;
+
+        content: "";
+        background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -183px -39px;
       }
     }
   }
+
+
 
   display: block;
   width: 100%;
@@ -522,6 +552,7 @@ body {
   text-align: justify;
   list-style-type: none;
   overflow: hidden;
+
 
   &__item {
     display: inline-block;
@@ -562,6 +593,8 @@ body {
     height: 200px;
   }
 
+
+
   &__btn {
     min-width: 140px;
     margin: 70px auto 0;
@@ -580,28 +613,218 @@ body {
   background: #332855 url("https://i.lensdump.com/i/8oempb.jpg") no-repeat center;
   background-size: cover;
 
-  &::after {
-    /* clearfix */
-    display: table;
-    content: "";
-    clear: both;
+
+  &-information {
+    margin-bottom: 70px;
   }
 
+
   &-about {
-    display: block;
     float: left;
+    display: block;
+    width: 300px;
+    margin-right: 20px;
+
+    &__logo {
+      display: block;
+      margin-bottom: 20px;
+      @include logo;
+    }
+
+    &__descript {
+      @include p-font(14px, 26px);
+    }
   }
 
 
 
   &-contacts {
-    display: block;
     float: left;
+    display: block;
+    width: 310px;
+    margin-right: 20px;
+    padding-right: 20px;
+    font-style: normal;
+
+    &__title {
+      margin: 0 auto 20px;
+      @include h3-font(15px, 50px);
+    }
+
+    &__descript {
+      position: relative;
+      margin-bottom: 12px;
+      padding-left: 30px;
+      @include p-font(14px, 26px);
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+      }
+
+      &.--icon-location::before { width:14px; height: 19px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -10px;}
+
+      &.--icon-phone::before    { width:17px; height: 17px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -39px;}
+    }
   }
 
 
   &-subscribe {
-    display: block;
     float: right;
+    display: block;
+    width: 290px;
+
+    &__title {
+      margin: 0 auto 20px;
+      @include h3-font(15px, 50px);
+    }
+  }
+
+  &-form {
+    font-size: 0;
+    margin-bottom: 27px;
+
+    &__input {
+      display: inline-block;
+      width: 210px;
+      height: 45px;
+      margin: 0;
+      padding-left: 15px;
+      margin-right: 10px;
+
+      @include p-font(14px, 1);
+      vertical-align: middle;
+
+      color: #ffffff;
+      border: 1px solid #808080;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+    }
+  
+
+    &__btn {
+      position: relative;
+      display: inline-block;
+      width: 70px;
+      height: 45px;
+      vertical-align: middle;
+      background: #808080;
+      background: rgba(255, 255, 255, 0.5);
+      border: none;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: block;
+        width: 25px;
+        height: 25px;
+
+        background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -157px -10px;
+      }
+
+      &:hover {
+        background: #00e0d0;
+
+        &::before {
+          background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -192px -10px;
+        }
+      }
+    }
+  }
+
+
+  &-social {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 0;
+
+    &__btn {
+      position: relative;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+
+      padding: 0;
+      margin: 0;
+      margin-right: 10px;
+
+      border: 1px solid #ffffff;
+      border-radius: 17px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      & a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 17px;
+
+        &:hover {
+          background-color: #00e0d0;
+        }
+      }
+
+      & a::after {
+        display: block;
+        content: "";
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+
+      &.--fb a::after { width: 8px;  height: 16px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -52px -10px; }
+
+      &.--tw a::after { width: 15px; height: 12px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -109px -9px; }
+
+      &.--dr a::after { width: 17px; height: 16px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -29px -10px; }
+
+      &.--ig a::after { width: 16px; height: 15px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -89px -10px; }
+
+      &.--gp a::after { width: 16px; height: 15px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -69px -9px; }
+
+      &.--yt a::after { width: 18px; height: 15px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -129px -7px; }
+    }
+  }
+
+  &-navigation {
+    @include navigation;
+  
+    &__item {
+      @include navigation__item;
+  
+      & a {
+        @include nav-box;
+        @include h3-font(14px, 1);
+        color: #ffffff;
+        text-decoration: none;
+  
+        &:hover {
+          color: #00e0d0;
+          text-decoration: underline;
+        }
+      }
+
+      &:first-child a { padding-left: 0px; }
+      &:last-child a { padding-right: 0px; }
+    }
+  }
+
+  &-copyright {
+    float: right;
+    @include p-font(14px, 1);
   }
 }
