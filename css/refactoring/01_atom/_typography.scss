@@ -1,0 +1,35 @@
+// Font-families
+// -------------
+
+$serif: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+$sans: Roboto, Verdana, Arial, Helvetica, sans-serif;
+
+// Text stiles
+// -----------
+
+@mixin title {
+  font: normal 900 32px/1.2 $serif;
+}
+
+@mixin header {
+  font: normal 700 22px/1.2 $serif;
+  text-transform: uppercase;
+}
+
+@mixin subheader {
+  font: normal 400 14px/1.2 $serif;
+}
+
+@mixin bold($fontsize, $lineheight: 1) {
+  // в макете у заголовков экспертизы и футера разный font-size,
+  // но в целом это один и тот же уровень (h3) и стиль
+  font-family: $sans;
+  font-weight: 900;
+  font-size: $fontsize;
+  line-height: $lineheight;
+  text-transform: uppercase;
+}
+
+@mixin text-font($font-size, $line-height) {
+  font: normal 300 #{$font-size}/#{$line-height} $sans;
+}
