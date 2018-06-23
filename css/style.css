@@ -811,6 +811,27 @@ video {
   height: 50px;
 }
 
+.a-btn {
+  display: inline-block;
+  padding: 14px;
+  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #00e0d0;
+  border: 1px solid #00e0d0;
+  border-radius: 2px;
+}
+
+.a-btn:hover, .a-btn:focus {
+  color: #39335f;
+  background-color: #00e0d0;
+  border-color: #39335f;
+}
+
+.a-btn.--wide {
+  min-width: 140px;
+}
+
 /*------------------------------------*/
 /*                                    */
 /* #МОЛЕКУЛЫ (объекты, компоненты)    */
