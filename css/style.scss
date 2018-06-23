@@ -32,20 +32,6 @@ body {
   
 }
 
-.wrapper {
-  /* оборачивает контент в единую колонку */
-  display: block;
-  max-width: 960px;
-  margin: auto;
-  padding: 0 10px;
-}
-
-.clearfix::after {
-  display: table;
-  content: "";
-  clear: both;
-}
-
 
 
 .btn {

@@ -27,20 +27,6 @@ body {
   color: #ffffff;
 }
 
-.wrapper {
-  /* оборачивает контент в единую колонку */
-  display: block;
-  max-width: 960px;
-  margin: auto;
-  padding: 0 10px;
-}
-
-.clearfix::after {
-  display: table;
-  content: "";
-  clear: both;
-}
-
 .btn {
   display: inline-block;
   padding: 14px;
@@ -804,6 +790,14 @@ video {
   content: '';
   display: table;
   clear: both;
+}
+
+.wrapper {
+  /* оборачивает контент в единую колонку */
+  display: block;
+  max-width: 960px;
+  margin: auto;
+  padding: 0 10px;
 }
 
 /*------------------------------------*/

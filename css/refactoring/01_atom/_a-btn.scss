@@ -1,0 +1,23 @@
+.a-btn {
+  display: inline-block;
+  padding: 14px;
+
+  font: 400 16px/1 $btn;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: $theme-bright;
+  border: 1px solid $theme-bright;
+  border-radius: 2px;
+
+  &:hover,
+  &:focus {
+    color: $theme-dark;
+    background-color: $theme-bright;
+    border-color: $theme-dark;
+  }
+
+  &.--wide {
+    min-width: 140px;
+  }
+}
