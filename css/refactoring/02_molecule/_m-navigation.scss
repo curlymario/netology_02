@@ -28,6 +28,11 @@
     &:hover {
       color: $theme-bright;
     }
+
+    &.--wide {
+      @include text-font(14px, 1); 
+      padding-right: 22px;
+    }
   }
 
   &__item:first-child &__link { padding-left: 0px; }

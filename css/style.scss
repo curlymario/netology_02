@@ -732,27 +732,9 @@ body {
     }
   }
 
-  &-navigation {
-    @include navigation;
-  
-    &__item {
-      @include navigation__item;
-  
-      & a {
-        @include nav-box;
-        @include h3-font(14px, 1);
-        color: #ffffff;
-        text-decoration: none;
-  
-        &:hover {
-          color: #00e0d0;
-          text-decoration: underline;
-        }
-      }
-
-      &:first-child a { padding-left: 0px; }
-      &:last-child a { padding-right: 0px; }
-    }
+  &__navigation {
+    display: inline-block;
+    vertical-align: top;
   }
 
   &-copyright {
