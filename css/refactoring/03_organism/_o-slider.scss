@@ -1,0 +1,23 @@
+/*------------------------------------*/
+/*          ~ Slider ~                */
+/*------------------------------------*/
+/*                                    */
+
+.o-slider {
+  display: block;
+  text-align: center;
+
+  &__slide {
+    display: inline-block;
+    max-width: 800px;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+
+  &__bullets {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    vertical-align: bottom;
+  }
+}

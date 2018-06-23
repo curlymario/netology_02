@@ -1,18 +1,307 @@
 @charset "UTF-8";
 /*------------------------------------*/
-/*  #GLOBAL                           */
+/*  ~ Рефакторинг ~                   */
 /*------------------------------------*/
-html,
-body {
-  padding: 0;
+/*====================================*/
+/* Новые стили появятся здесь         */
+/*------------------------------------*/
+/*                                    */
+/* #БАЗА (глобальные стили и хелперы) */
+/*                                    */
+/*------------------------------------*/
+/*                                    */
+/* Подсмотрено и взято на вооружение              */
+/* https://zellwk.com/blog/css-architecture-3/    */
+/* Resets margins and paddings for headers, ul, ol and p */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+blockquote {
   margin: 0;
-  font-size: 100%;
+  padding: 0;
 }
 
-* {
+/* Completely resets form items */
+/* ---------------------------- */
+/* Super hard reset that removes all borders */
+/* and radius of all form items. */
+/* ============================ */
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+}
+
+input:hover, input:active, input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+button:hover,
+button:active,
+button:focus {
+  outline: none;
+}
+
+/* Use border-box for everything */
+html {
   box-sizing: border-box;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Set Image and Objects to have a max-width of 100% */
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+/* smooth transitions */
+* {
+  transition: all 0.3s ease-out;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.wrapper {
+  /* оборачивает контент в единую колонку */
+  display: block;
+  max-width: 960px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+/*------------------------------------*/
+/*                                    */
+/* #АТОМЫ (текст, кнопки, заголовки)  */
+/*                                    */
+/*------------------------------------*/
+/*                                    */
+.a-logo {
+  width: 128px;
+  height: 50px;
+}
+
+.a-btn {
+  display: inline-block;
+  padding: 14px;
+  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #00e0d0;
+  border: 1px solid #00e0d0;
+  border-radius: 2px;
+}
+
+.a-btn:hover, .a-btn:focus {
+  color: #39335f;
+  background-color: #00e0d0;
+  border-color: #39335f;
+}
+
+.a-btn.--wide {
+  min-width: 140px;
+}
+
+/*------------------------------------*/
+/*                                    */
+/* #МОЛЕКУЛЫ (объекты, компоненты)    */
+/*                                    */
+/*------------------------------------*/
+/*                                    */
+/*------------------------------------*/
+/*          ~ Навигация ~             */
+/*------------------------------------*/
+/*                                    */
+.m-navigation {
+  font-size: 0px;
+  list-style-type: none;
+  text-align: left;
+}
+
+.m-navigation__item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+}
+
+.m-navigation__link {
+  display: inline-block;
+  padding: 0 10px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  vertical-align: top;
+  color: #ffffff;
+}
+
+.m-navigation__link.--current, .m-navigation__link:hover {
+  color: #00e0d0;
+}
+
+.m-navigation__link.--wide {
+  font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+  padding-right: 22px;
+}
+
+.m-navigation__item:first-child .m-navigation__link {
+  padding-left: 0px;
+}
+
+.m-navigation__item:last-child .m-navigation__link {
+  padding-right: 0px;
+}
+
+/*------------------------------------*/
+/*            ~ Слайд ~               */
+/*------------------------------------*/
+/*                                    */
+.m-slide {
+  padding: 125px 10px;
+  text-align: center;
+}
+
+.m-slide__title {
+  display: block;
+  margin-bottom: 25px;
+  font: normal 900 32px/1.2 "Playfair Display", Georgia, "Times New Roman", Times, serif;
+}
+
+.m-slide__title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  border-bottom: 1px solid #00e0d0;
+  margin: 20px auto 0;
+}
+
+.m-slide__descript {
+  font: normal 300 14px/24px Roboto, Verdana, Arial, Helvetica, sans-serif;
+  margin-bottom: 45px;
+}
+
+.m-slide__btn {
+  margin: 0 auto;
+}
+
+/*------------------------------------*/
+/*       ~ Контролы слайда ~          */
+/*------------------------------------*/
+/*                                    */
+.m-bullets {
+  font-size: 0;
+  line-height: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.m-bullets__btn {
+  display: inline-block;
+}
+
+.m-bullets__link {
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 2.5px;
+}
+
+.m-bullets__link::after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+}
+
+.m-bullets__link:hover::after, .m-bullets__link.--current::after {
+  background-color: #00e0d0;
+  border: 1px solid #00e0d0;
+}
+
+/*------------------------------------*/
+/*                                    */
+/* #ОРГАНИЗМЫ (разделы и блоки сайта) */
+/*                                    */
+/*------------------------------------*/
+/*                                    */
+/*------------------------------------*/
+/*          ~ Header ~                */
+/*------------------------------------*/
+/*                                    */
+/*------------------------------------*/
+/*        ~ Верхняя панель ~          */
+/*------------------------------------*/
+/*                                    */
+.o-navbar {
+  display: block;
+  text-align: right;
+}
+
+.o-navbar__logo {
+  float: left;
+  display: block;
+}
+
+.o-navbar__nav {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*------------------------------------*/
+/*          ~ Slider ~                */
+/*------------------------------------*/
+/*                                    */
+.o-slider {
+  display: block;
+  text-align: center;
+}
+
+.o-slider__slide {
+  display: inline-block;
+  max-width: 800px;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.o-slider__bullets {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  vertical-align: bottom;
+}
+
+/*====================================*/
+/*------------------------------------*/
+/*  ~ Старые стили ~                  */
+/*------------------------------------*/
+/*====================================*/
+/*------------------------------------*/
+/*  #GLOBAL                           */
+/*------------------------------------*/
 .site-section {
   /* «уши» блоков вертикальной сетки, 
   вертикальные поля и базовый текст*/
@@ -51,87 +340,6 @@ body {
   background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
   background-size: cover;
   padding-top: 15px;
-}
-
-.slider {
-  display: block;
-  text-align: center;
-}
-
-.slider__controls {
-  display: inline-block;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  font-size: 0;
-  line-height: 0;
-  list-style-type: none;
-  text-align: center;
-  vertical-align: bottom;
-}
-
-.slider__ctrl-btn {
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.slider__ctrl-btn:last-child {
-  margin-right: 0;
-}
-
-.slider__ctrl-btn a {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  padding: 0px;
-  border: 1px solid #ffffff;
-}
-
-.slider__ctrl-btn a:hover {
-  background-color: #00e0d0;
-  border-width: 0;
-}
-
-.slider__ctrl-btn.--current {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  padding: 0px;
-  background-color: #00e0d0;
-}
-
-.slide {
-  display: inline-block;
-  max-width: 800px;
-  margin: 0 auto 35px;
-  padding: 125px 10px;
-  vertical-align: middle;
-  text-align: center;
-}
-
-.slide__title {
-  display: block;
-  margin-bottom: 25px;
-  font: normal 900 32px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-}
-
-.slide__title::after {
-  content: "";
-  display: block;
-  width: 50px;
-  border-bottom: 1px solid #00e0d0;
-  margin: 20px auto 0;
-}
-
-.slide__descript {
-  font: normal 300 14px/24px Roboto, Verdana, Arial, Helvetica, sans-serif;
-  margin-bottom: 45px;
-}
-
-.slide__btn {
-  margin: 0 auto;
 }
 
 /*------------------------------------*/
@@ -673,205 +881,5 @@ body {
 .footer-copyright {
   float: right;
   font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
-}
-
-/*------------------------------------*/
-/*  ~ Рефакторинг ~                   */
-/*------------------------------------*/
-/*====================================*/
-/* Новые стили появятся здесь         */
-/*------------------------------------*/
-/*                                    */
-/* #БАЗА (глобальные стили и хелперы) */
-/*                                    */
-/*------------------------------------*/
-/*                                    */
-/* Подсмотрено и взято на вооружение              */
-/* https://zellwk.com/blog/css-architecture-3/    */
-/* Resets margins and paddings for headers, ul, ol and p */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-li,
-p,
-blockquote {
-  margin: 0;
-  padding: 0;
-}
-
-/* Completely resets form items */
-/* ---------------------------- */
-/* Super hard reset that removes all borders */
-/* and radius of all form items. */
-/* ============================ */
-input,
-textarea,
-button {
-  border: 0;
-  border-radius: 0;
-  outline: none;
-  appearance: none;
-}
-
-input:hover, input:active, input:focus,
-textarea:hover,
-textarea:active,
-textarea:focus,
-button:hover,
-button:active,
-button:focus {
-  outline: none;
-}
-
-/* Use border-box for everything */
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-/* Set Image and Objects to have a max-width of 100% */
-embed,
-iframe,
-img,
-object,
-video {
-  max-width: 100%;
-}
-
-/* smooth transitions */
-* {
-  transition: all 0.3s;
-}
-
-.clearfix::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.wrapper {
-  /* оборачивает контент в единую колонку */
-  display: block;
-  max-width: 960px;
-  margin: auto;
-  padding: 0 10px;
-}
-
-/*------------------------------------*/
-/*                                    */
-/* #АТОМЫ (текст, кнопки, заголовки)  */
-/*                                    */
-/*------------------------------------*/
-/*                                    */
-.a-logo {
-  width: 128px;
-  height: 50px;
-}
-
-.a-btn {
-  display: inline-block;
-  padding: 14px;
-  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #00e0d0;
-  border: 1px solid #00e0d0;
-  border-radius: 2px;
-}
-
-.a-btn:hover, .a-btn:focus {
-  color: #39335f;
-  background-color: #00e0d0;
-  border-color: #39335f;
-}
-
-.a-btn.--wide {
-  min-width: 140px;
-}
-
-/*------------------------------------*/
-/*                                    */
-/* #МОЛЕКУЛЫ (объекты, компоненты)    */
-/*                                    */
-/*------------------------------------*/
-/*                                    */
-/*------------------------------------*/
-/*          ~ Навигация ~             */
-/*------------------------------------*/
-/*                                    */
-.m-navigation {
-  font-size: 0px;
-  list-style-type: none;
-  text-align: left;
-}
-
-.m-navigation__item {
-  display: inline-block;
-  text-align: center;
-  vertical-align: top;
-}
-
-.m-navigation__link {
-  display: inline-block;
-  padding: 0 10px;
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: 13px;
-  line-height: 50px;
-  text-transform: uppercase;
-  text-decoration: none;
-  vertical-align: top;
-  color: #ffffff;
-}
-
-.m-navigation__link.--current, .m-navigation__link:hover {
-  color: #00e0d0;
-}
-
-.m-navigation__link.--wide {
-  font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
-  padding-right: 22px;
-}
-
-.m-navigation__item:first-child .m-navigation__link {
-  padding-left: 0px;
-}
-
-.m-navigation__item:last-child .m-navigation__link {
-  padding-right: 0px;
-}
-
-/*------------------------------------*/
-/*                                    */
-/* #ОРГАНИЗМЫ (разделы и блоки сайта) */
-/*                                    */
-/*------------------------------------*/
-/*                                    */
-/*------------------------------------*/
-/*        ~ Верхняя панель ~          */
-/*------------------------------------*/
-/*                                    */
-.o-navbar {
-  display: block;
-  text-align: right;
-}
-
-.o-navbar__logo {
-  float: left;
-  display: block;
-}
-
-.o-navbar__nav {
-  display: inline-block;
-  vertical-align: top;
 }
 /*# sourceMappingURL=style.css.map */

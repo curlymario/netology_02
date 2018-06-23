@@ -27,9 +27,10 @@
 // Atoms (variables and primitive blocks)
 // --------------------------------------
 
+// @import "01_atom/_breakpoints.scss";
 @import "01_atom/_colors";
 @import "01_atom/_typography";
-// @import "01_atom/_breakpoints.scss";
+@import "01_atom/_a-header-line";
 @import "01_atom/_a-logo";
 @import "01_atom/_a-btn";
 
@@ -45,6 +46,8 @@
 // ------------------------------------
 
 @import "02_molecule/_m-navigation";
+@import "02_molecule/_m-slide";
+@import "02_molecule/_m-bullets";
 
 
 /*------------------------------------*/
@@ -54,12 +57,13 @@
 /*------------------------------------*/
 /*                                    */
 
-@import "03_organism/_o-navbar";
-
 // Organisms (complex blocks and site sections)
 // --------------------------------------------
 
 
+@import "03_organism/_o-masthead";
+@import "03_organism/_o-navbar";
+@import "03_organism/_o-slider";
 
 
 // Templates (typical page layouts)

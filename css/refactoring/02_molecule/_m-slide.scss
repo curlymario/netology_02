@@ -1,0 +1,31 @@
+/*------------------------------------*/
+/*            ~ Слайд ~               */
+/*------------------------------------*/
+/*                                    */
+
+.m-slide {
+  padding: 125px 10px;
+  text-align: center;
+
+  &__title {
+    display: block;
+    margin-bottom: 25px;
+    @include title;
+
+    &::after {
+      @include header-line(1px, $theme-bright);
+      margin: 20px auto 0;
+    }
+  }
+
+  &__descript {
+    @include text-font(14px, 24px);
+    margin-bottom: 45px;
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+}
+
+
