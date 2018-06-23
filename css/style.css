@@ -874,17 +874,17 @@ video {
 /*        ~ Верхняя панель ~          */
 /*------------------------------------*/
 /*                                    */
-.m-navbar {
+.o-navbar {
   display: block;
   text-align: right;
 }
 
-.m-navbar__logo {
+.o-navbar__logo {
   float: left;
   display: block;
 }
 
-.m-navbar__nav {
+.o-navbar__nav {
   display: inline-block;
   vertical-align: top;
 }
