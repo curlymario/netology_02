@@ -3,3 +3,11 @@
   display: table;
   clear: both;
 }
+
+.wrapper {
+  /* оборачивает контент в единую колонку */
+  display: block;
+  max-width: 960px;
+  margin: auto;
+  padding: 0 10px;
+}
