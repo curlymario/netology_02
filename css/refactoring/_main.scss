@@ -44,7 +44,6 @@
 // ------------------------------------
 
 @import "02_molecule/_m-navigation";
-@import "02_molecule/_m-navbar";
 
 
 /*------------------------------------*/
@@ -54,6 +53,7 @@
 /*------------------------------------*/
 /*                                    */
 
+@import "03_organism/_o-navbar";
 
 // Organisms (complex blocks and site sections)
 // --------------------------------------------
