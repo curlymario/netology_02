@@ -10,18 +10,18 @@
 
   &__item {
     display: inline-block;
-    padding: 0 10px;
-
+    
     text-align: center;
     vertical-align: top;
-
-    &:first-child { padding-left: 0px; }
-    &:last-child { padding-right: 0px; }
   }
 
   &__link {
-    @include bold(13px, 16px); 
+    display: inline-block;
+    padding: 0 10px;
+
+    @include bold(13px, 50px); 
     text-decoration: none;
+    vertical-align: top;
     color: $white;
     
     &.--current,
@@ -29,4 +29,8 @@
       color: $theme-bright;
     }
   }
+
+  &__item:first-child &__link { padding-left: 0px; }
+  &__item:last-child &__link { padding-right: 0px; }
+
 }

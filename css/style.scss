@@ -69,13 +69,6 @@ body {
 
 
 
-@mixin logo {
-  width: 128px;
-  height: 50px;
-}
-
-
-
 
 
 //------------------------------------
@@ -156,53 +149,6 @@ body {
     background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
     background-size: cover;
     padding-top: 15px;
-  }
-
-
-  &-navbar {
-    display: block;
-    text-align: right;
-    margin-bottom: 25px;
-
-    &__logo {
-      float: left;
-      display: block;
-      @include logo;
-    }
-  }
-
-  &-navigation {
-    @include navigation;
-    margin: 17px 0;
-  
-    &__item {
-      @include navigation__item;
-  
-      &.--current {
-        @include nav-box;
-        @include h3-font(13px, 16px);
-        color: #00e0d0;
-
-        &:first-child { padding-left: 0px; }
-        &:last-child { padding-right: 0px; }
-
-      }
-  
-      & a {
-        @include nav-box;
-        @include h3-font(13px, 16px);
-        color: #ffffff;
-        text-decoration: none;
-  
-        &:hover {
-          color: #00e0d0;
-          text-decoration: underline;
-        }
-
-        &:first-child a { padding-left: 0px; }
-        &:last-child a { padding-right: 0px; }
-      }
-    }
   }
 }
 
@@ -628,7 +574,7 @@ body {
     &__logo {
       display: block;
       margin-bottom: 20px;
-      @include logo;
+      
     }
 
     &__descript {

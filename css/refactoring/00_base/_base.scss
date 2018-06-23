@@ -55,3 +55,8 @@ object,
 video {
   max-width: 100%;
 }
+
+/* smooth transitions */
+* {
+  transition: all 0.3s;
+}
