@@ -1,0 +1,18 @@
+.m-navbar {
+
+  display: block;
+  text-align: right;
+
+  &__logo {
+    float: left;
+    display: block;
+  }
+
+  &__nav {
+    display: inline-block;
+    margin: 17px 0;
+    
+    vertical-align: top;
+  }
+}
+

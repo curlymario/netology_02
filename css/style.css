@@ -796,4 +796,145 @@ body {
   float: right;
   font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
 }
+
+/*------------------------------------*/
+/*  ~ Рефакторинг ~                   */
+/*------------------------------------*/
+/*====================================*/
+/* Новые стили появятся здесь         */
+/*------------------------------------*/
+/*====================================*/
+/*                                    */
+/*  #ГЛОБАЛЬНЫЕ СТИЛИ И БЛОКИ         */
+/*                                    */
+/*====================================*/
+/*------------------------------------*/
+/* Подсмотрено и взято на вооружение              */
+/* https://zellwk.com/blog/css-architecture-3/    */
+/* Resets margins and paddings for headers, ul, ol and p */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+/* Completely resets form items */
+/* ---------------------------- */
+/* Super hard reset that removes all borders */
+/* and radius of all form items. */
+/* ============================ */
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+}
+
+input:hover, input:active, input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+button:hover,
+button:active,
+button:focus {
+  outline: none;
+}
+
+/* Use border-box for everything */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Set Image and Objects to have a max-width of 100% */
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/*------------------------------------*/
+/*  #ЗАГОЛОВКИ, КНОПКИ И НАВИГАЦИЯ    */
+/*------------------------------------*/
+.m-navigation {
+  font-size: 0px;
+  list-style-type: none;
+  text-align: left;
+}
+
+.m-navigation__item {
+  display: inline-block;
+  padding: 0 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.m-navigation__item:first-child {
+  padding-left: 0px;
+}
+
+.m-navigation__item:last-child {
+  padding-right: 0px;
+}
+
+.m-navigation__link {
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.m-navigation__link.--current, .m-navigation__link:hover {
+  color: #00e0d0;
+}
+
+.m-navbar {
+  display: block;
+  text-align: right;
+}
+
+.m-navbar__logo {
+  float: left;
+  display: block;
+}
+
+.m-navbar__nav {
+  display: inline-block;
+  margin: 17px 0;
+  vertical-align: top;
+}
+
+/*------------------------------------*/
+/*====================================*/
+/*                                    */
+/*  #РАЗДЕЛЫ САЙТА                    */
+/*                                    */
+/*====================================*/
+/*------------------------------------*/
 /*# sourceMappingURL=style.css.map */
