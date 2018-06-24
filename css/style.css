@@ -349,6 +349,48 @@ video {
 }
 
 /*------------------------------------*/
+/*           ~ Персонаж ~             */
+/*------------------------------------*/
+/*                                    */
+.m-team-member {
+  width: 220px;
+}
+
+.m-team-member__avatar {
+  display: block;
+  width: 220px;
+  height: 230px;
+  background: #ffffff;
+}
+
+.m-team-member__bio {
+  display: block;
+  width: 100%;
+  padding: 20px 0 22px;
+  border: 1px solid #e7e7e7;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.m-team-member__name {
+  display: block;
+  margin: 0 auto 9px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.m-team-member__role {
+  display: block;
+  margin: 0 auto;
+  font: normal 300 13px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #fafafa;
+  opacity: 0.7;
+}
+
+/*------------------------------------*/
 /*                                    */
 /* #ОРГАНИЗМЫ (разделы и блоки сайта) */
 /*                                    */
