@@ -392,6 +392,7 @@ video {
   display: block;
   width: 100%;
   padding-top: 85px;
+  margin-bottom: 20px;
   font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 14px;
