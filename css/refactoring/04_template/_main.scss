@@ -1,0 +1,32 @@
+/*------------------------------------*/
+/*       ~ Главная страница ~         */
+/*------------------------------------*/
+/*                                    */
+
+.l-site-section {
+  /* «уши» блоков вертикальной сетки, вертикальные поля*/
+  display: block;
+  width: 100%;
+  padding: 70px 0;  
+}
+
+.l-wrapper {
+  /* оборачивает контент в центральную колонку */
+  display: block;
+  max-width: 960px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+/*------------------------------------*/
+/*       ~ Шапка сайта ~              */
+/*------------------------------------*/
+/*                                    */
+
+.o-masthead {
+  background: $theme-dark url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: 15px;
+
+  color: $white;
+}

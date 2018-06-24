@@ -82,14 +82,6 @@ video {
   clear: both;
 }
 
-.wrapper {
-  /* оборачивает контент в единую колонку */
-  display: block;
-  max-width: 960px;
-  margin: auto;
-  padding: 0 10px;
-}
-
 /*------------------------------------*/
 /*                                    */
 /* #АТОМЫ (текст, кнопки, заголовки)  */
@@ -288,10 +280,6 @@ video {
 /*------------------------------------*/
 /*                                    */
 /*------------------------------------*/
-/*          ~ Header ~                */
-/*------------------------------------*/
-/*                                    */
-/*------------------------------------*/
 /*        ~ Верхняя панель ~          */
 /*------------------------------------*/
 /*                                    */
@@ -333,54 +321,41 @@ video {
   vertical-align: bottom;
 }
 
+/*------------------------------------*/
+/*       ~ Главная страница ~         */
+/*------------------------------------*/
+/*                                    */
+.l-site-section {
+  /* «уши» блоков вертикальной сетки, вертикальные поля*/
+  display: block;
+  width: 100%;
+  padding: 70px 0;
+}
+
+.l-wrapper {
+  /* оборачивает контент в центральную колонку */
+  display: block;
+  max-width: 960px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+/*------------------------------------*/
+/*       ~ Шапка сайта ~              */
+/*------------------------------------*/
+/*                                    */
+.o-masthead {
+  background: #39335f url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
+  padding-top: 15px;
+  color: #ffffff;
+}
+
 /*====================================*/
 /*------------------------------------*/
 /*  ~ Старые стили ~                  */
 /*------------------------------------*/
 /*====================================*/
-/*------------------------------------*/
-/*  #GLOBAL                           */
-/*------------------------------------*/
-.site-section {
-  /* «уши» блоков вертикальной сетки, 
-  вертикальные поля и базовый текст*/
-  display: block;
-  width: 100%;
-  padding: 70px 0;
-  color: #333333;
-}
-
-.site-section.--background {
-  /* тёмный фон */
-  color: #ffffff;
-}
-
-.btn {
-  display: inline-block;
-  padding: 14px;
-  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  color: #00e0d0;
-  text-decoration: none;
-  border: 1px solid #00e0d0;
-  border-radius: 2px;
-}
-
-.btn:hover {
-  color: #332855;
-  background-color: #00e0d0;
-  border-color: #332855;
-}
-
-/*------------------------------------*/
-/*  #HEADER                           */
-/*------------------------------------*/
-.main-header {
-  background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
-  background-size: cover;
-  padding-top: 15px;
-}
-
 /*------------------------------------*/
 /*  #EXPERTISE                        */
 /*------------------------------------*/

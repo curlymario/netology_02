@@ -16,54 +16,6 @@
 
 /*====================================*/
 
-/*------------------------------------*/
-/*  #GLOBAL                           */
-/*------------------------------------*/
-
-
-// добавить в html разметочных div'ов?
-// стилизовать через разметочные классы
-
-.site-section {
-  /* «уши» блоков вертикальной сетки, 
-  вертикальные поля и базовый текст*/
-  display: block;
-  width: 100%;
-  padding: 70px 0;
-
-  color: #333333;
-
-  &.--background {
-    /* тёмный фон */
-    color: #ffffff;
-  }
-  
-}
-
-
-
-.btn {
-  display: inline-block;
-  padding: 14px;
-
-  font: 400 16px/1 "Hammersmith One", Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  color: #00e0d0;
-  text-decoration: none;
-
-  border: 1px solid #00e0d0;
-  border-radius: 2px;
-
-  &:hover {
-    color: #332855;
-    background-color: #00e0d0;
-    border-color: #332855;
-  }
-}
-
-
-
-
 
 //------------------------------------
 //  #TYPOGRAPHY                           
@@ -122,23 +74,6 @@
 @mixin nav-box {
   display: inline-block;
   padding: 0 10px;
-}
-
-
-
-
-
-/*------------------------------------*/
-/*  #HEADER                           */
-/*------------------------------------*/
-
-.main {
-
-  &-header {
-    background: #332855 url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
-    background-size: cover;
-    padding-top: 15px;
-  }
 }
 
 
