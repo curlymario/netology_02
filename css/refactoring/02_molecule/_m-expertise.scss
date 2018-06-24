@@ -1,0 +1,43 @@
+/*------------------------------------*/
+/*            ~ Услуга ~              */
+/*------------------------------------*/
+/*                                    */
+
+.m-expertise {
+  padding: 32px;
+  text-align: center;
+
+  &__title {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 85px;
+    margin-bottom: 20px;
+    @include bold(14px, 1.2);
+  
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.--icon-web::before    { width: 49px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -119px -10px; }
+
+    &.--icon-brand::before  { width: 50px; height: 46px; background: url('https://i.lensdump.com/i/8oerxZ.png') -188px -6px; }
+
+    &.--icon-app::before    { width: 28px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -10px -10px; }
+
+    &.--icon-seo::before    { width: 50px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -258px -10px; }
+
+    &.--icon-game::before   { width: 41px; height: 50px; background: url('https://i.lensdump.com/i/8oerxZ.png') -58px -10px; }
+
+    &.--icon-love::before   { width: 50px; height: 46px; background: url('https://i.lensdump.com/i/8oerxZ.png') -328px -10px; } 
+  }
+
+  &__descript {
+    @include text-font(14px, 22px);
+  }
+}

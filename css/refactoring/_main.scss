@@ -48,7 +48,8 @@
 @import "02_molecule/_m-navigation";
 @import "02_molecule/_m-slide";
 @import "02_molecule/_m-bullets";
-@import "02_molecule/_m-section-head";
+@import "02_molecule/_m-section-header";
+@import "02_molecule/_m-expertise";
 
 
 
@@ -65,18 +66,21 @@
 
 @import "03_organism/_o-navbar";
 @import "03_organism/_o-slider";
+@import "03_organism/_o-block-list";
+@import "03_organism/_o-card-list";
 
 
 // Templates (typical page layouts)
 // --------------------------------
 
-@import "04_template/_main";
+@import "04_template/_t-section";
+@import "04_template/_t-wrapper";
 
 
-// Pages (actual pages)(will there be any css?)
-// --------------------------------------------
+// Pages (actual pages)
+// --------------------
 
-
+@import "05_page/_p-main.scss"
 
 // Utilities (will I really use them?)
 // -----------------------------------

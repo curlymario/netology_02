@@ -1,4 +1,4 @@
-.m-section-head {
+.m-section-header {
   text-align: center;
 
   &__title {
@@ -17,19 +17,17 @@
   }
 
   &::after {
-    @include header-line(2px, $type-gray);
-    margin: 0 auto;
-    opacity: 0.3;
+    @include header-line(2px, $type-gray, 0.3);
   }
 
   &.--dark-bg {
-    & .m-section-head__title,
-    & .m-section-head__subtitle {
+    & .m-section-header__title,
+    & .m-section-header__subtitle {
       color: $white;
     }
 
     &::after {
-      @include header-line(2px, $white);
+      @include header-line(2px, $white, 0.2);
     }
   }
 }
