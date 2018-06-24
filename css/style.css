@@ -242,6 +242,45 @@ video {
   border: 1px solid #00e0d0;
 }
 
+.m-section-head {
+  text-align: center;
+}
+
+.m-section-head__title {
+  margin: 0 auto 10px;
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  color: #413d4b;
+}
+
+.m-section-head__subtitle {
+  margin: 0 auto 18px;
+  font: normal 400 14px/1.2 "Playfair Display", Georgia, "Times New Roman", Times, serif;
+  color: #2f2d35;
+  opacity: 0.75;
+}
+
+.m-section-head::after {
+  content: "";
+  display: block;
+  width: 50px;
+  border-bottom: 2px solid #413d4b;
+  margin: 0 auto;
+  opacity: 0.3;
+}
+
+.m-section-head.--dark-bg .m-section-head__title,
+.m-section-head.--dark-bg .m-section-head__subtitle {
+  color: #ffffff;
+}
+
+.m-section-head.--dark-bg::after {
+  content: "";
+  display: block;
+  width: 50px;
+  border-bottom: 2px solid #ffffff;
+}
+
 /*------------------------------------*/
 /*                                    */
 /* #ОРГАНИЗМЫ (разделы и блоки сайта) */
@@ -357,31 +396,7 @@ video {
 
 .expertise-header {
   display: block;
-  text-align: center;
   margin-bottom: 50px;
-}
-
-.expertise-header__title {
-  margin: 0 auto 10px;
-  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-  text-transform: uppercase;
-  color: #413d4b;
-}
-
-.expertise-header__subtitle {
-  margin: 0 auto 18px;
-  font: normal 400 14px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
-  color: #2f2d35;
-  opacity: 0.75;
-}
-
-.expertise-header::after {
-  content: "";
-  display: block;
-  width: 50px;
-  border-bottom: 2px solid #413d4b;
-  margin: 0 auto;
-  opacity: 0.3;
 }
 
 .expertise-list {
