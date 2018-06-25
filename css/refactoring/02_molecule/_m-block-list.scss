@@ -22,7 +22,8 @@
     }
 
     &:nth-child(n+4) {
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-top: 1px solid $hairline;
+      border-top: 1px solid $hairline-a;
     }
   }
 }
