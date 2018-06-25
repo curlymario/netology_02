@@ -1,0 +1,15 @@
+/*------------------------------------*/
+/*         ~ Шапка сайта ~            */
+/*------------------------------------*/
+/*                                    */
+
+.o-masthead {
+  color: $white;
+  background: $theme-dark url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
+
+  &__topbar,
+  &__hero {
+    @extend %wrapper;
+  }
+}

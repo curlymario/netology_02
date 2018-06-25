@@ -5,3 +5,13 @@
   margin: auto;
   padding: 0 10px;
 }
+
+
+// I know it is a layout element like t-section, which now is
+// at template folder. Current architecture sucks and I know it.
+
+// I wish I went for something like Harry Robert’s namespaces 
+// instead of the Atomic Design namespaces bc for small projects 
+// like this it makes way more sense. Either I don't understand
+// Atomic Designs “template” thing, or it just doesn't make sense
+// when it is not styleguide-driven developement.

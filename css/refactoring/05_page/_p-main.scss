@@ -1,71 +1,13 @@
-/*------------------------------------*/
-/*         ~ Шапка сайта ~            */
-/*------------------------------------*/
-/*                                    */
-
 .o-masthead {
   @extend %section;
   padding-top: 15px;
-
-  color: $white;
-  background: $theme-dark url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
-  background-size: cover;
-
-  &__topbar,
-  &__hero {
-    @extend %wrapper;
-  }
 }
-
-
-/*------------------------------------*/
-/*            ~ Услуги ~              */
-/*------------------------------------*/
-/*                                    */
 
 .o-expertise {
   @extend %section;
-  
-  &__header {
-    display: block;
-    margin-bottom: 48px;
-  }
-
-  &__list {
-    @extend %wrapper;
-  }
 }
 
 
-/*------------------------------------*/
-/*            ~ Команда ~             */
-/*------------------------------------*/
-/*                                    */
-
 .o-team {
   @extend %section;
-
-  color: $white;
-  background: $theme-dark url("https://i.lensdump.com/i/8oe4Ir.jpg") no-repeat center;
-  background-size: cover;
-  text-align: center;
-
-  &__header {
-    display: block;
-    margin-bottom: 47px;
-  }
-
-  &__list {
-    @extend %wrapper;
-    margin-bottom: 70px;
-  }
-
-  &__descript {
-    @include text-font(14px, 1);
-    margin-bottom: 27px;
-  }
-
-  &__btn {
-    margin: 0 auto;
-  }
 }

@@ -34,6 +34,8 @@
 @import "01_atom/_a-logo";
 @import "01_atom/_a-btn";
 
+@import "01_atom/_a-wrapper";
+
 
 /*------------------------------------*/
 /*                                    */
@@ -46,11 +48,16 @@
 // ------------------------------------
 
 @import "02_molecule/_m-navigation";
+@import "02_molecule/_m-navbar";
 @import "02_molecule/_m-slide";
+@import "02_molecule/_m-slider";
 @import "02_molecule/_m-bullets";
 @import "02_molecule/_m-section-header";
 @import "02_molecule/_m-expertise";
+@import "02_molecule/_m-block-list";
 @import "02_molecule/_m-team-member";
+@import "02_molecule/_m-card-list";
+
 
 
 /*------------------------------------*/
@@ -64,17 +71,15 @@
 // --------------------------------------------
 
 
-@import "03_organism/_o-navbar";
-@import "03_organism/_o-slider";
-@import "03_organism/_o-block-list";
-@import "03_organism/_o-card-list";
+@import "03_organism/_o-masthead";
+@import "03_organism/_o-expertise";
+@import "03_organism/_o-team";
 
 
 // Templates (typical page layouts)
 // --------------------------------
 
 @import "04_template/_t-section";
-@import "04_template/_t-wrapper";
 
 
 // Pages (actual pages)
