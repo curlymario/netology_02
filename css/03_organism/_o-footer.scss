@@ -1,0 +1,40 @@
+/*------------------------------------*/
+/*            ~ Footer ~              */
+/*------------------------------------*/
+/*                                    */
+
+.o-footer {
+  color: $white;
+  background: $theme-dark url("https://i.lensdump.com/i/8oempb.jpg") no-repeat center;
+  background-size: cover;
+
+
+  &__information {
+    @extend %wrapper;
+    margin-bottom: 70px;
+  }
+
+  &__section {
+    float: left;
+    margin-right: 20px;
+
+    &:last-child {
+      float: right;
+      margin-right: 0;
+    }
+  }
+
+  &__navbar {
+    @extend %wrapper;
+  }
+
+  &__navigation {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__copyright {
+    float: right;
+    @include text-font(14px, 1);
+  }
+}

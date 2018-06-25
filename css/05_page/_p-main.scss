@@ -7,7 +7,14 @@
   @extend %section;
 }
 
-
 .o-team {
+  @extend %section;
+}
+
+.o-portfolio {
+  @extend %section;
+}
+
+.o-footer {
   @extend %section;
 }

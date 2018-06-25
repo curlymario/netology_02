@@ -1,10 +1,5 @@
 @charset "UTF-8";
 /*------------------------------------*/
-/*  ~ Рефакторинг ~                   */
-/*------------------------------------*/
-/*====================================*/
-/* Новые стили появятся здесь         */
-/*------------------------------------*/
 /*                                    */
 /* #БАЗА (глобальные стили и хелперы) */
 /*                                    */
@@ -114,7 +109,7 @@ video {
   min-width: 140px;
 }
 
-.o-masthead__topbar, .o-masthead__hero, .o-expertise__list, .o-team__list {
+.o-masthead__topbar, .o-masthead__hero, .o-expertise__list, .o-team__list, .o-portfolio__header, .o-footer__information, .o-footer__navbar {
   /* оборачивает контент в центральную колонку */
   display: block;
   max-width: 960px;
@@ -148,6 +143,7 @@ video {
   display: inline-block;
   padding: 0 10px;
   font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 900;
   font-size: 13px;
   line-height: 50px;
@@ -343,6 +339,7 @@ video {
   padding-top: 85px;
   margin-bottom: 20px;
   font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 900;
   font-size: 14px;
   line-height: 1.2;
@@ -421,6 +418,7 @@ video {
 }
 
 .m-block-list__item:nth-child(n+4) {
+  border-top: 1px solid #f8fafb;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -451,6 +449,7 @@ video {
   display: block;
   margin: 0 auto 9px;
   font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 900;
   font-size: 14px;
   line-height: 1;
@@ -484,6 +483,272 @@ video {
 
 .m-card-list__card:last-child {
   margin-right: 0px;
+}
+
+/*------------------------------------*/
+/*         ~ Список работ ~           */
+/*------------------------------------*/
+/*                                    */
+.m-grid-list {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+  text-align: justify;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.m-grid-list__item {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 16.66%;
+  overflow: hidden;
+}
+
+.m-grid-list__link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.m-grid-list__link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #00e0d0;
+  opacity: 0;
+  z-index: 2;
+}
+
+.m-grid-list__link:hover::before {
+  opacity: 0.7;
+}
+
+.m-grid-list__thumb {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+/*------------------------------------*/
+/*            ~ About ~               */
+/*------------------------------------*/
+/*                                    */
+.m-info-block {
+  display: block;
+  width: 300px;
+}
+
+.m-info-block.--contacts {
+  width: 310px;
+  padding-right: 20px;
+}
+
+.m-info-block.--subscribe {
+  width: 290px;
+}
+
+.m-info-block__logo {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.m-info-block__title {
+  margin: 0 auto 20px;
+  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.m-info-block__descript {
+  font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.m-info-block__descript.--icon-location, .m-info-block__descript.--icon-phone {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 30px;
+}
+
+.m-info-block__descript.--icon-location::before, .m-info-block__descript.--icon-phone::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+}
+
+.m-info-block__descript.--icon-location::before {
+  width: 14px;
+  height: 19px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -10px;
+}
+
+.m-info-block__descript.--icon-phone::before {
+  width: 17px;
+  height: 17px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -39px;
+}
+
+.m-info-block__form {
+  margin-bottom: 27px;
+}
+
+/*------------------------------------*/
+/*       ~ Форма подписки ~           */
+/*------------------------------------*/
+/*                                    */
+.m-form {
+  font-size: 0;
+}
+
+.m-form__input {
+  position: relative;
+  display: inline-block;
+  width: 210px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  margin-right: 10px;
+  font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+  vertical-align: top;
+  color: #ffffff;
+  border: 1px solid #808080;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+.m-form__input ::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.m-form__btn {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 45px;
+  padding: 0;
+  vertical-align: top;
+  background: #808080;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+}
+
+.m-form__btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -157px -10px;
+}
+
+.m-form__btn:hover {
+  background: #00e0d0;
+}
+
+.m-form__btn:hover::before {
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -192px -10px;
+}
+
+/*------------------------------------*/
+/*            ~ Соцсети ~             */
+/*------------------------------------*/
+/*                                    */
+.m-social {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0;
+}
+
+.m-social__btn {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  border-radius: 17px;
+}
+
+.m-social__btn:last-child {
+  margin-right: 0;
+}
+
+.m-social__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 17px;
+}
+
+.m-social__link:hover {
+  background-color: #00e0d0;
+  border: 1px solid #00e0d0;
+}
+
+.m-social__link::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.m-social__link.--fb::after {
+  width: 8px;
+  height: 16px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -52px -10px;
+}
+
+.m-social__link.--tw::after {
+  width: 15px;
+  height: 12px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -109px -9px;
+}
+
+.m-social__link.--dr::after {
+  width: 17px;
+  height: 16px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -29px -10px;
+}
+
+.m-social__link.--ig::after {
+  width: 16px;
+  height: 15px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -89px -10px;
+}
+
+.m-social__link.--gp::after {
+  width: 16px;
+  height: 15px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -69px -9px;
+}
+
+.m-social__link.--yt::after {
+  width: 18px;
+  height: 15px;
+  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -129px -7px;
 }
 
 /*------------------------------------*/
@@ -540,55 +805,28 @@ video {
   margin: 0 auto;
 }
 
-.o-masthead, .o-expertise, .o-team {
-  /* «уши» блоков вертикальной сетки, вертикальные поля*/
-  display: block;
-  width: 100%;
-  padding: 70px 0;
-}
-
-.o-masthead {
-  padding-top: 15px;
-}
-
-/*====================================*/
 /*------------------------------------*/
-/*  ~ Старые стили ~                  */
+/*           ~ Портфолио ~            */
 /*------------------------------------*/
-/*====================================*/
-/*------------------------------------*/
-/*  #PORTFOLIO                        */
-/*------------------------------------*/
-.portfolio {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-size: 0;
-  line-height: 0;
-  text-align: justify;
-  list-style-type: none;
-  overflow: hidden;
-}
-
-.portfolio-block {
+/*                                    */
+.o-portfolio {
   text-align: center;
 }
 
-.portfolio-block__header {
+.o-portfolio__header {
   /*верхний отступ от section, а нижний установлен здесь */
   margin-bottom: 70px;
   text-align: justify;
 }
 
-.portfolio-block__title {
+.o-portfolio__title {
   float: left;
   margin: 0 auto;
-  font: normal 700 22px/1.2 "Playfair Display", Georgia, 'Times New Roman', Times, serif;
+  font: normal 700 22px/1.2 "Playfair Display", Georgia, "Times New Roman", Times, serif;
   text-transform: uppercase;
 }
 
-.portfolio-block__link {
+.o-portfolio__link {
   float: right;
   position: relative;
   margin: 0 auto;
@@ -597,11 +835,11 @@ video {
   text-decoration: none;
 }
 
-.portfolio-block__link:hover {
+.o-portfolio__link:hover {
   text-decoration: underline;
 }
 
-.portfolio-block__link::after {
+.o-portfolio__link::after {
   /* стрелочка */
   position: absolute;
   right: 0;
@@ -614,275 +852,52 @@ video {
   background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -183px -39px;
 }
 
-.portfolio__item {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 16.66%;
-  overflow: hidden;
-}
-
-.portfolio__link {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-}
-
-.portfolio__link::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: #00e0d0;
-  opacity: 0;
-  z-index: 2;
-}
-
-.portfolio__link:hover::before {
-  opacity: 0.7;
-}
-
-.portfolio__thumb {
-  position: relative;
-  width: 100%;
-  height: 200px;
-}
-
-.portfolio__btn {
-  min-width: 140px;
+.o-portfolio__btn {
   margin: 70px auto 0;
 }
 
 /*------------------------------------*/
-/*  #FOOTER                           */
+/*            ~ Footer ~              */
 /*------------------------------------*/
-.footer {
-  background: #332855 url("https://i.lensdump.com/i/8oempb.jpg") no-repeat center;
+/*                                    */
+.o-footer {
+  color: #ffffff;
+  background: #39335f url("https://i.lensdump.com/i/8oempb.jpg") no-repeat center;
   background-size: cover;
 }
 
-.footer-information {
+.o-footer__information {
   margin-bottom: 70px;
 }
 
-.footer-about {
+.o-footer__section {
   float: left;
-  display: block;
-  width: 300px;
   margin-right: 20px;
 }
 
-.footer-about__logo {
-  display: block;
-  margin-bottom: 20px;
-}
-
-.footer-about__descript {
-  font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
-}
-
-.footer-contacts {
-  float: left;
-  display: block;
-  width: 310px;
-  margin-right: 20px;
-  padding-right: 20px;
-  font-style: normal;
-}
-
-.footer-contacts__title {
-  margin: 0 auto 20px;
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: 15px;
-  line-height: 50px;
-  text-transform: uppercase;
-}
-
-.footer-contacts__descript {
-  position: relative;
-  margin-bottom: 12px;
-  padding-left: 30px;
-  font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
-}
-
-.footer-contacts__descript::before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 0;
-}
-
-.footer-contacts__descript.--icon-location::before {
-  width: 14px;
-  height: 19px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -10px;
-}
-
-.footer-contacts__descript.--icon-phone::before {
-  width: 17px;
-  height: 17px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -39px;
-}
-
-.footer-subscribe {
+.o-footer__section:last-child {
   float: right;
-  display: block;
-  width: 290px;
-}
-
-.footer-subscribe__title {
-  margin: 0 auto 20px;
-  font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
-  font-weight: 900;
-  font-size: 15px;
-  line-height: 50px;
-  text-transform: uppercase;
-}
-
-.footer-form {
-  font-size: 0;
-  margin-bottom: 27px;
-}
-
-.footer-form__input {
-  display: inline-block;
-  width: 210px;
-  height: 45px;
-  margin: 0;
-  padding-left: 15px;
-  margin-right: 10px;
-  font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
-  vertical-align: middle;
-  color: #ffffff;
-  border: 1px solid #808080;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: transparent;
-}
-
-.footer-form__btn {
-  position: relative;
-  display: inline-block;
-  width: 70px;
-  height: 45px;
-  vertical-align: middle;
-  background: #808080;
-  background: rgba(255, 255, 255, 0.5);
-  border: none;
-}
-
-.footer-form__btn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 25px;
-  height: 25px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -157px -10px;
-}
-
-.footer-form__btn:hover {
-  background: #00e0d0;
-}
-
-.footer-form__btn:hover::before {
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -192px -10px;
-}
-
-.footer-social {
-  display: block;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  font-size: 0;
-}
-
-.footer-social__btn {
-  position: relative;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
-  border: 1px solid #ffffff;
-  border-radius: 17px;
-}
-
-.footer-social__btn:last-child {
   margin-right: 0;
 }
 
-.footer-social__btn a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 17px;
-}
-
-.footer-social__btn a:hover {
-  background-color: #00e0d0;
-}
-
-.footer-social__btn a::after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
-
-.footer-social__btn.--fb a::after {
-  width: 8px;
-  height: 16px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -52px -10px;
-}
-
-.footer-social__btn.--tw a::after {
-  width: 15px;
-  height: 12px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -109px -9px;
-}
-
-.footer-social__btn.--dr a::after {
-  width: 17px;
-  height: 16px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -29px -10px;
-}
-
-.footer-social__btn.--ig a::after {
-  width: 16px;
-  height: 15px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -89px -10px;
-}
-
-.footer-social__btn.--gp a::after {
-  width: 16px;
-  height: 15px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -69px -9px;
-}
-
-.footer-social__btn.--yt a::after {
-  width: 18px;
-  height: 15px;
-  background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -129px -7px;
-}
-
-.footer__navigation {
+.o-footer__navigation {
   display: inline-block;
   vertical-align: top;
 }
 
-.footer-copyright {
+.o-footer__copyright {
   float: right;
   font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.o-masthead, .o-expertise, .o-team, .o-portfolio, .o-footer {
+  /* «уши» блоков вертикальной сетки, вертикальные поля*/
+  display: block;
+  width: 100%;
+  padding: 70px 0;
+}
+
+.o-masthead {
+  padding-top: 15px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -25,6 +25,7 @@ $btn: "Hammersmith One", Arial, Helvetica, sans-serif;
   // в макете у заголовков экспертизы и футера разный font-size,
   // но в целом это один и тот же уровень (h3) и стиль
   font-family: $sans;
+  font-style: normal;
   font-weight: 900;
   font-size: $fontsize;
   line-height: $lineheight;

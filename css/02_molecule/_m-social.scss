@@ -1,0 +1,66 @@
+/*------------------------------------*/
+/*            ~ Соцсети ~             */
+/*------------------------------------*/
+/*                                    */
+
+.m-social {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0;
+
+  &__btn {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+
+    border-radius: 17px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $white;
+    border-radius: 17px;
+
+    &:hover {
+      background-color: $theme-bright;
+      border: 1px solid $theme-bright;
+    }
+  
+    &::after {
+      display: block;
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    &.--fb::after { width: 8px;  height: 16px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -52px -10px; }
+
+    &.--tw::after { width: 15px; height: 12px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -109px -9px; }
+
+    &.--dr::after { width: 17px; height: 16px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -29px -10px; }
+
+    &.--ig::after { width: 16px; height: 15px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -89px -10px; }
+
+    &.--gp::after { width: 16px; height: 15px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -69px -9px; }
+
+    &.--yt::after { width: 18px; height: 15px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -129px -7px; }
+
+  }
+}

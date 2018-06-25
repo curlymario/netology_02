@@ -1,0 +1,50 @@
+/*------------------------------------*/
+/*            ~ About ~               */
+/*------------------------------------*/
+/*                                    */
+
+.m-info-block {
+  display: block;
+  width: 300px;
+
+  &.--contacts { width: 310px; padding-right: 20px; }
+
+  &.--subscribe { width: 290px; }
+
+  &__logo {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin: 0 auto 20px;
+    @include bold(15px, 50px);
+  }
+
+  &__descript {
+    @include text-font(14px, 26px);
+
+    &.--icon-location,
+    &.--icon-phone {
+      position: relative;
+      margin-bottom: 12px;
+      padding-left: 30px;
+
+      &::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+      }
+    }
+
+    &.--icon-location::before { width:14px; height: 19px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -10px;}
+
+    &.--icon-phone::before    { width:17px; height: 17px; background: url("https://i.lensdump.com/i/8ofDxk.png") no-repeat -10px -39px;}
+  }
+
+  &__form {
+    margin-bottom: 27px;
+  }
+}

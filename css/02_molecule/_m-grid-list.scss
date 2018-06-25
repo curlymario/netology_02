@@ -1,0 +1,54 @@
+/*------------------------------------*/
+/*         ~ Список работ ~           */
+/*------------------------------------*/
+/*                                    */
+
+.m-grid-list {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+  text-align: justify;
+  list-style-type: none;
+  overflow: hidden;
+
+
+  &__item {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    width: 16.66%;
+    overflow: hidden;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    
+    width: 100%;
+    height: 100%;
+
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: $theme-bright;
+      opacity: 0;
+      z-index: 2;
+    }
+
+    &:hover::before {
+      opacity: 0.7;
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+}
