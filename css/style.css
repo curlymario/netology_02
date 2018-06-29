@@ -151,13 +151,21 @@ video {
 
 .m-navigation__item {
   display: inline-block;
+  margin: 0 10px;
   text-align: center;
   vertical-align: top;
 }
 
+.m-navigation__item:first-child {
+  margin-left: 0px;
+}
+
+.m-navigation__item:last-child {
+  margin-right: 0px;
+}
+
 .m-navigation__link {
   display: inline-block;
-  padding: 0 10px;
   font-family: Roboto, Verdana, Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -173,17 +181,16 @@ video {
   color: #00e0d0;
 }
 
-.m-navigation__link.--wide {
+.m-navigation.--wide {
+  margin-right: 22px;
+}
+
+.m-navigation.--wide:last-child {
+  margin-right: 0px;
+}
+
+.m-navigation.--wide__link {
   font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
-  padding-right: 22px;
-}
-
-.m-navigation__item:first-child .m-navigation__link {
-  padding-left: 0px;
-}
-
-.m-navigation__item:last-child .m-navigation__link {
-  padding-right: 0px;
 }
 
 /*------------------------------------*/

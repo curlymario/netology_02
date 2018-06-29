@@ -10,14 +10,17 @@
 
   &__item {
     display: inline-block;
+    margin: 0 10px;
     
     text-align: center;
     vertical-align: top;
+
+    &:first-child { margin-left: 0px; }
+    &:last-child { margin-right: 0px; }
   }
 
   &__link {
     display: inline-block;
-    padding: 0 10px;
 
     @include bold(13px, 50px); 
     text-decoration: none;
@@ -28,14 +31,14 @@
     &:hover {
       color: $theme-bright;
     }
-
-    &.--wide {
-      @include text-font(14px, 1); 
-      padding-right: 22px;
-    }
   }
 
-  &__item:first-child &__link { padding-left: 0px; }
-  &__item:last-child &__link { padding-right: 0px; }
+  &.--wide {
+    margin-right: 22px;
+
+    &:last-child { margin-right: 0px; }
+
+    &__link { @include text-font(14px, 1); }
+  }
 
 }
