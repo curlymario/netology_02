@@ -12,20 +12,23 @@
   &__information {
     @extend %wrapper;
     margin-bottom: 70px;
+
+    @extend %justify;
   }
 
   &__section {
-    float: left;
+    display: inline-block;
     margin-right: 20px;
+    vertical-align: top;
 
     &:last-child {
-      float: right;
       margin-right: 0;
     }
   }
 
   &__navbar {
     @extend %wrapper;
+    @extend %justify;
   }
 
   &__navigation {
@@ -34,7 +37,8 @@
   }
 
   &__copyright {
-    float: right;
+    display: inline-block;
+    vertical-align: top;
     @include text-font(14px, 1);
   }
 }

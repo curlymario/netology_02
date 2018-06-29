@@ -33,7 +33,9 @@ button {
   border: 0;
   border-radius: 0;
   outline: none;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 input:hover, input:active, input:focus,
@@ -48,13 +50,15 @@ button:focus {
 
 /* Use border-box for everything */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 /* Set Image and Objects to have a max-width of 100% */
@@ -68,13 +72,23 @@ video {
 
 /* smooth transitions */
 * {
+  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-.clearfix::after {
+.m-navbar, .o-portfolio__header, .o-footer__information, .o-footer__navbar {
+  text-align: justify;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+.m-navbar::after, .o-portfolio__header::after, .o-footer__information::after, .o-footer__navbar::after {
   content: '';
-  display: table;
-  clear: both;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
 }
 
 /*------------------------------------*/
@@ -178,12 +192,11 @@ video {
 /*                                    */
 .m-navbar {
   display: block;
-  text-align: right;
 }
 
 .m-navbar__logo {
-  float: left;
-  display: block;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .m-navbar__nav {
@@ -354,7 +367,8 @@ video {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .m-expertise__title.--icon-web::before {
@@ -630,6 +644,21 @@ video {
   background: transparent;
 }
 
+.m-form__input ::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.m-form__input :-ms-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.m-form__input ::-ms-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
 .m-form__input ::placeholder {
   color: #ffffff;
   opacity: 1;
@@ -652,7 +681,8 @@ video {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: block;
   width: 25px;
   height: 25px;
@@ -713,7 +743,8 @@ video {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   z-index: 10;
 }
 
@@ -818,23 +849,24 @@ video {
 .o-portfolio__header {
   /*верхний отступ от section, а нижний установлен здесь */
   margin-bottom: 70px;
-  text-align: justify;
 }
 
 .o-portfolio__title {
-  float: left;
+  display: inline-block;
   margin: 0 auto;
   font: normal 700 22px/1.2 "Playfair Display", Georgia, "Times New Roman", Times, serif;
   text-transform: uppercase;
+  vertical-align: top;
 }
 
 .o-portfolio__link {
-  float: right;
+  display: inline-block;
   position: relative;
   margin: 0 auto;
   padding-right: 18px;
   font: normal 300 14px/26px Roboto, Verdana, Arial, Helvetica, sans-serif;
   text-decoration: none;
+  vertical-align: top;
 }
 
 .o-portfolio__link:hover {
@@ -846,7 +878,8 @@ video {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: block;
   width: 9px;
   height: 13px;
@@ -873,12 +906,12 @@ video {
 }
 
 .o-footer__section {
-  float: left;
+  display: inline-block;
   margin-right: 20px;
+  vertical-align: top;
 }
 
 .o-footer__section:last-child {
-  float: right;
   margin-right: 0;
 }
 
@@ -888,7 +921,8 @@ video {
 }
 
 .o-footer__copyright {
-  float: right;
+  display: inline-block;
+  vertical-align: top;
   font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
 }
 

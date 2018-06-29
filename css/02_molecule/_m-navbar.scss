@@ -5,11 +5,11 @@
 
 .m-navbar {
   display: block;
-  text-align: right;
+  @extend %justify;
 
   &__logo {
-    float: left;
-    display: block;
+    display: inline-block;   
+    vertical-align: top;
   }
 
   &__nav {

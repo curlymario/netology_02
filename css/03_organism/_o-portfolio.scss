@@ -11,23 +11,26 @@
 
     /*верхний отступ от section, а нижний установлен здесь */
     margin-bottom: 70px;
-    text-align: justify;
+
+    @extend %justify;
   }
 
   &__title {
-    float: left;
+    display: inline-block;
     margin: 0 auto;
     @include header;
+    vertical-align: top;
   }
 
   &__link {
-    float: right;
+    display: inline-block;
     position: relative;
     margin: 0 auto;
     padding-right: 18px;
 
     @include text-font(14px, 26px);
     text-decoration: none;
+    vertical-align: top;
 
     &:hover {
       text-decoration: underline;
