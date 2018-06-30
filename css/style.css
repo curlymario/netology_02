@@ -61,15 +61,6 @@ html {
           box-sizing: inherit;
 }
 
-/* Set Image and Objects to have a max-width of 100% */
-embed,
-iframe,
-img,
-object,
-video {
-  max-width: 100%;
-}
-
 /* smooth transitions */
 * {
   -webkit-transition: all 0.3s ease-out;
@@ -462,10 +453,22 @@ video {
 }
 
 .m-team-member__avatar {
+  position: relative;
   display: block;
   width: 220px;
   height: 230px;
   background: #ffffff;
+  overflow: hidden;
+}
+
+.m-team-member__avatar > img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .m-team-member__bio {

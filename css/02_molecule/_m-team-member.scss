@@ -7,10 +7,22 @@
   width: 220px;
 
   &__avatar {
+    position: relative;
     display: block;
     width: 220px;
     height: 230px;
     background: $white;
+    
+    overflow: hidden;
+
+    & > img {
+      height: 100%;
+      width: auto;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__bio {
