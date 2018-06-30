@@ -1,6 +1,10 @@
 .o-masthead {
   @extend %section;
-  padding-top: 15px;
+  padding: 0;
+
+  &__hero {
+    @extend %section;
+  }
 }
 
 .o-expertise {

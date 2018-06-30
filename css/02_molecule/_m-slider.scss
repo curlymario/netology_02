@@ -4,7 +4,10 @@
 /*                                    */
 
 .m-slider {
-  display: block;
+  position: relative;
+  color: $white;
+  background: $theme-dark url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
   text-align: center;
 
   &__slide {
@@ -15,9 +18,10 @@
   }
 
   &__bullets {
-    display: inline-block;
-    width: 100%;
-    margin: 0 auto;
-    vertical-align: bottom;
+    display: block;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

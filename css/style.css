@@ -123,7 +123,7 @@ video {
   min-width: 140px;
 }
 
-.o-masthead__topbar, .o-masthead__hero, .o-expertise__list, .o-team__list, .o-portfolio__header, .o-footer__information, .o-footer__navbar {
+.o-masthead__topbar, .o-expertise__list, .o-team__list, .o-portfolio__header, .o-footer__information, .o-footer__navbar {
   /* оборачивает контент в центральную колонку */
   display: block;
   max-width: 960px;
@@ -237,8 +237,11 @@ video {
 }
 
 .m-slide__descript {
-  font: normal 300 14px/24px Roboto, Verdana, Arial, Helvetica, sans-serif;
   margin-bottom: 45px;
+}
+
+.m-slide__descript > p {
+  font: normal 300 14px/24px Roboto, Verdana, Arial, Helvetica, sans-serif;
 }
 
 .m-slide__btn {
@@ -250,7 +253,10 @@ video {
 /*------------------------------------*/
 /*                                    */
 .m-slider {
-  display: block;
+  position: relative;
+  color: #ffffff;
+  background: #39335f url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
+  background-size: cover;
   text-align: center;
 }
 
@@ -262,10 +268,12 @@ video {
 }
 
 .m-slider__bullets {
-  display: inline-block;
-  width: 100%;
-  margin: 0 auto;
-  vertical-align: bottom;
+  display: block;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 /*------------------------------------*/
@@ -802,9 +810,16 @@ video {
 /*------------------------------------*/
 /*                                    */
 .o-masthead {
-  color: #ffffff;
-  background: #39335f url("https://i.lensdump.com/i/8oesF7.jpg") no-repeat center;
-  background-size: cover;
+  position: relative;
+}
+
+.o-masthead__topbar {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 5;
 }
 
 /*------------------------------------*/
@@ -933,7 +948,7 @@ video {
   font: normal 300 14px/1 Roboto, Verdana, Arial, Helvetica, sans-serif;
 }
 
-.o-masthead, .o-expertise, .o-team, .o-portfolio, .o-footer {
+.o-masthead, .o-masthead__hero, .o-expertise, .o-team, .o-portfolio, .o-footer {
   /* «уши» блоков вертикальной сетки, вертикальные поля*/
   display: block;
   width: 100%;
@@ -941,6 +956,6 @@ video {
 }
 
 .o-masthead {
-  padding-top: 15px;
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */
