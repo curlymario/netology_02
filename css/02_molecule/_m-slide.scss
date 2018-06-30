@@ -19,8 +19,11 @@
   }
 
   &__descript {
-    @include text-font(14px, 24px);
     margin-bottom: 45px;
+
+    & > p {
+      @include text-font(14px, 24px);
+    }
   }
 
   &__btn {
