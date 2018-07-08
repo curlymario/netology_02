@@ -349,6 +349,8 @@ html {
 /*------------------------------------*/
 /*                                    */
 .m-expertise {
+  display: block;
+  padding: 32px;
   text-align: center;
 }
 
@@ -421,44 +423,29 @@ html {
 /*------------------------------------*/
 /*                                    */
 .m-block-list {
-  list-style-type: none;
-  font-size: 0;
+  display: table;
+  border-collapse: collapse;
 }
 
-.m-block-list::before, .m-block-list::after {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
+.m-block-list__row {
+  display: table-row;
+}
+
+.m-block-list__row + .m-block-list__row {
+  border-top: 1px solid #f8fafb;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .m-block-list__item {
-  position: relative;
-  display: inline-block;
+  display: table-cell;
   width: 33.33%;
-  margin: 0;
-  padding: 32px;
   vertical-align: top;
+  border-right: 1px solid #f8fafb;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.m-block-list__item::before {
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-left: 1px solid #f8fafb;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.m-block-list__item:nth-child(3n-2)::before {
-  border-left: none;
-}
-
-.m-block-list__item:nth-child(n+4) {
-  border-top: 1px solid #f8fafb;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+.m-block-list__item:nth-child(3n) {
+  border-right: none;
 }
 
 /*------------------------------------*/

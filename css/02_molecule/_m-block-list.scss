@@ -4,43 +4,27 @@
 /*                                    */
 
 .m-block-list {
-  list-style-type: none;
-  font-size: 0;
+  display: table;
+  border-collapse: collapse;
 
-  &::before,
-  &::after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+  &__row {
+    display: table-row;
+  } 
+
+  &__row + &__row {
+    border-top: 1px solid $hairline;
+    border-top: 1px solid $hairline-a;
   }
 
   &__item {
-    position: relative;
-    display: inline-block;
+    display: table-cell;
     width: 33.33%;
-    margin: 0;
-    padding: 32px;
     vertical-align: top;
-
-    &::before {
-      content: '';
-      display: block;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-left: 1px solid $hairline;
-      border-left: 1px solid $hairline-a;
-    }
-
-    &:nth-child(3n-2)::before {
-      border-left: none;
-    }
-
-    &:nth-child(n+4) {
-      border-top: 1px solid $hairline;
-      border-top: 1px solid $hairline-a;
+    border-right: 1px solid $hairline;
+    border-right: 1px solid $hairline-a;
+    
+    &:nth-child(3n) {
+      border-right: none;
     }
   }
 }
