@@ -4,6 +4,9 @@
   max-width: 960px;
   margin: auto;
   padding: 0 10px;
+
+  /* чтобы вёрстка не ломалась, раз она не адаптивная */
+  min-width: 960px;
 }
 
 
