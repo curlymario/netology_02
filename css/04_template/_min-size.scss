@@ -1,0 +1,7 @@
+// dirty hack to pass exams
+// wouldn't be needed if was mobile-first
+
+.body {
+    /* чтобы вёрстка не ломалась, раз она не адаптивная */
+    min-width: 960px;
+}
