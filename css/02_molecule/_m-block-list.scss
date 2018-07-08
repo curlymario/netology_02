@@ -7,18 +7,35 @@
   list-style-type: none;
   font-size: 0;
 
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
   &__item {
+    position: relative;
     display: inline-block;
     width: 33.33%;
     margin: 0;
+    padding: 32px;
     vertical-align: top;
 
-    border-right: 1px solid $hairline;
-    border-right: 1px solid $hairline-a;
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-left: 1px solid $hairline;
+      border-left: 1px solid $hairline-a;
+    }
 
-
-    &:nth-child(3n) {
-      border-right: none;
+    &:nth-child(3n-2)::before {
+      border-left: none;
     }
 
     &:nth-child(n+4) {
