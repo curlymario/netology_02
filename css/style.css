@@ -956,6 +956,11 @@ html {
   padding: 70px 0;
 }
 
+body {
+  /* чтобы вёрстка не ломалась, раз она не адаптивная */
+  min-width: 960px;
+}
+
 .o-masthead {
   padding: 0;
 }
